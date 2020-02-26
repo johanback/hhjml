@@ -18,20 +18,19 @@ public class CheeseQuiz extends Quiz {
         getQuestionArray().add(new Question("Favourite sci-fi franchise?", "Doctor who", "Star wars", "Star trek", "Battlestar Galactica"));
     }
 
-    public String getResult1() {
-        return result1;
-    }
-
-    public String getResult2() {
-        return result2;
-    }
-
-    public String getResult3() {
-        return result3;
-    }
-
-    public String getResult4() {
-        return result4;
+    public String getResult(Character resultChar) {
+        switch (resultChar){
+            case 'A':
+                return result1;
+            case 'B':
+                return result2;
+            case 'C':
+                return result3;
+            case 'D':
+                return result4;
+            default:
+                return "No fucking clue mate";
+        }
     }
 
     public List<Question> getQuestionArray() {

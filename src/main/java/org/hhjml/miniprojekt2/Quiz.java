@@ -11,20 +11,8 @@ public abstract class Quiz {
 
     private List<Question> questionArray = new ArrayList<>();
 
-    public String getResult1() {
+    public String getResult(Character resultChar) {
         return result1;
-    }
-
-    public String getResult2() {
-        return result2;
-    }
-
-    public String getResult3() {
-        return result3;
-    }
-
-    public String getResult4() {
-        return result4;
     }
 
     public List<Question> getQuestionArray() {

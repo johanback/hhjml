@@ -18,16 +18,21 @@ public class QuizController {
     QuizService service;
 
     @GetMapping("/cheesequiz")
-    String displayCheeseQuiz (HttpSession session, Model model, @RequestParam int qnumber) {
+    String displayCheeseQuiz(HttpSession session, Model model, @RequestParam int qnumber) {
+        if (session.getAttribute("qnumber") != null) {
+            if ((Integer) session.getAttribute("qnumber") > service.getCheeseQuiz().getQuestionArray().size() - 1) {
+                return "redirect:/result";
+            }
+        }
         model.addAttribute("inquiry", service.getQuestion(service.getCheeseQuiz(), qnumber));
         return "quizview";
     }
 
     @PostMapping("/registeranswer")
-    String registerAnswer (HttpSession session, char answer) {
-
+    String registerAnswer(HttpSession session, char answer) {
+        System.out.println(answer);
         //Get the hashmap from the session
-        HashMap<Character, Integer> answerTable = (HashMap)session.getAttribute("answerTable");
+        HashMap<Character, Integer> answerTable = (HashMap) session.getAttribute("answerTable");
         if (answerTable == null) {
             answerTable = new HashMap<>();
             session.setAttribute("answerTable", answerTable);
@@ -35,18 +40,27 @@ public class QuizController {
 
         //Add the score to the right key
         if (answerTable.containsKey(answer)) {
-            answerTable.put(answer, answerTable.get(answer)+1);
+            answerTable.put(answer, answerTable.get(answer) + 1);
         } else {
             answerTable.put(answer, 1);
         }
 
+        //Save the current question requestparam in the session
         if (session.getAttribute("qnumber") == null) {
             session.setAttribute("qnumber", 1);
         } else {
-            session.setAttribute("qnumber", (Integer)session.getAttribute("qnumber")+1);
+            session.setAttribute("qnumber", (Integer) session.getAttribute("qnumber") + 1);
         }
 
+
         return "redirect:cheesequiz?qnumber=" + session.getAttribute("qnumber");
+    }
+
+    @GetMapping("/result")
+    String displayResultForTheUserWhoIsAGoodBoyOrGirl(HttpSession session, Model model){
+        Character resultChar = service.calcMostAnswered((HashMap)session.getAttribute("answerTable"));
+        model.addAttribute("result", service.getCheeseQuiz().getResult(resultChar));
+        return "result";
     }
 
     @PostMapping("/destroy")
