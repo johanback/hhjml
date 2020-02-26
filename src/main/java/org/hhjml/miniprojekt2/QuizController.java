@@ -18,7 +18,7 @@ public class QuizController {
     QuizService service;
 
     @GetMapping("/cheesequiz")
-    String displayCheeseQuiz(HttpSession session, Model model, @RequestParam int qnumber) {
+    String displayCheeseQuiz(HttpSession session, Model model, @RequestParam(required = false, defaultValue = "0") int qnumber) {
         if (session.getAttribute("qnumber") != null) {
             if ((Integer) session.getAttribute("qnumber") > service.getCheeseQuiz().getQuestionArray().size() - 1) {
                 return "redirect:/result";
@@ -66,7 +66,7 @@ public class QuizController {
     @PostMapping("/destroy")
     public String destroySession(HttpServletRequest request) {
         request.getSession().invalidate();
-        return "redirect:/";
+        return "redirect:/cheesequiz";
     }
 
 }

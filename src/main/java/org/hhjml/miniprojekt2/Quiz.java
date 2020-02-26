@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Quiz {
+    private String quizName;
     private String result1;
     private String result2;
     private String result3;

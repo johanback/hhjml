@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CheeseQuiz extends Quiz {
+    private String quizName = "cheese";
     private String result1 = "Parmesan";
     private String result2 = "Cheddar";
     private String result3 = "Gouda";
