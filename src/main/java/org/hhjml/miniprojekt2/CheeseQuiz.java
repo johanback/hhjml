@@ -3,7 +3,7 @@ package org.hhjml.miniprojekt2;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CheeseQuiz {
+public class CheeseQuiz extends Quiz {
     private String result1 = "Parmesan";
     private String result2 = "Cheddar";
     private String result3 = "Gouda";

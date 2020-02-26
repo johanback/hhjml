@@ -5,30 +5,37 @@
     <title>Title</title>
 </head>
 <body>
-    <li>
-
-        <h3>CSS Stands for...</h3>
-        
+        <form action="/registeranswer" method="POST">
+            <h3 th:text="${inquiry.question}">CSS Stands for...</h3>
+            
+            <div>
+                <input type="radio" name="answer" id="question-1-answers-A" value="A" />
+                <label for="question-1-answers-A" th:text="${inquiry.answer1}">A) Computer Styled Sections </label>
+            </div>
+            
+            <div>
+                <input type="radio" name="answer" id="question-1-answers-B" value="B" />
+                <label for="question-1-answers-B" th:text="${inquiry.answer2}">B) Cascading Style Sheets</label>
+            </div>
+            
+            <div>
+                <input type="radio" name="answer" id="question-1-answers-C" value="C" />
+                <label for="question-1-answers-C" th:text="${inquiry.answer3}">C) Crazy Solid Shapes</label>
+            </div>
+            
+            <div>
+                <input type="radio" name="answer" id="question-1-answers-D" value="D" />
+                <label for="question-1-answers-D" th:text="${inquiry.answer4}">D) None of the above</label>
+            </div>
+            <div>
+                <input type="submit" value="Next">
+            </div>
+        </form>
         <div>
-            <input type="radio" name="question-1-answers" id="question-1-answers-A" value="A" />
-            <label for="question-1-answers-A">A) Computer Styled Sections </label>
-        </div>
-        
-        <div>
-            <input type="radio" name="question-1-answers" id="question-1-answers-B" value="B" />
-            <label for="question-1-answers-B">B) Cascading Style Sheets</label>
-        </div>
-        
-        <div>
-            <input type="radio" name="question-1-answers" id="question-1-answers-C" value="C" />
-            <label for="question-1-answers-C">C) Crazy Solid Shapes</label>
-        </div>
-        
-        <div>
-            <input type="radio" name="question-1-answers" id="question-1-answers-D" value="D" />
-            <label for="question-1-answers-D">D) None of the above</label>
+            <form th:action="@{/destroy}" method="post">
+                <input type="submit" value="Start over" />
+            </form>
         </div>
     
-    </li>
 </body>
 </html>	
