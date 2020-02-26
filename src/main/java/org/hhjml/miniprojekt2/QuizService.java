@@ -20,10 +20,12 @@ public class QuizService {
     }
 
     public Character calcMostAnswered(HashMap<Character, Integer> answerTable){
-        Character mostAnswered = 'A';
+        Integer compareValue = 0;
+        Character mostAnswered = null;
         for (Character c: answerTable.keySet()) {
-            if (answerTable.get(c) > answerTable.get(mostAnswered)){
-                mostAnswered = c;
+            if (answerTable.get(c) > compareValue){
+                compareValue = answerTable.get(c);
+                mostAnswered= c;
             }
         }
         return mostAnswered;
