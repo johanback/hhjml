@@ -3,16 +3,16 @@ package org.hhjml.miniprojekt2;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CheeseQuiz extends Quiz {
-    private String quizName = "cheese";
-    private String result1 = "Parmesan";
-    private String result2 = "Cheddar";
-    private String result3 = "Gouda";
-    private String result4 = "Pepper jack";
+public class ShoeQuiz extends Quiz{
+    private String quizName = "shoe";
+    private String result1 = "Sneaker";
+    private String result2 = "Pumps";
+    private String result3 = "Boots";
+    private String result4 = "Slippers";
 
     private List<Question> questionArray = new ArrayList<>();
 
-    public CheeseQuiz() {
+    public ShoeQuiz() {
         getQuestionArray().add(new Question("Favourite color?", "Blue", "Red", "Green", "Cheesy yellow"));
         getQuestionArray().add(new Question("Favourite food?", "Cheese, duh!", "MEAT!", "Pasta!", "Oysters"));
         getQuestionArray().add(new Question("Favourite animal?", "Cat", "Dog", "Giraffe", "Pink fairy armadillo"));

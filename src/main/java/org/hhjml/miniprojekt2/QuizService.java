@@ -19,6 +19,10 @@ public class QuizService {
         return repository.getCheeseQuiz();
     }
 
+    public Quiz getQuiz (String quizName) {
+        return repository.getQuiz(quizName);
+    }
+
     public Character calcMostAnswered(HashMap<Character, Integer> answerTable){
         Integer compareValue = 0;
         Character mostAnswered = null;

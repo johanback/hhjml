@@ -13,10 +13,14 @@ public abstract class Quiz {
     private List<Question> questionArray = new ArrayList<>();
 
     public String getResult(Character resultChar) {
-        return result1;
+        return null;
     }
 
     public List<Question> getQuestionArray() {
         return questionArray;
+    }
+
+    public String getQuizName() {
+        return quizName;
     }
 }

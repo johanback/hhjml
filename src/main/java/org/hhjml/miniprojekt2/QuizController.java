@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -17,19 +18,31 @@ public class QuizController {
     @Autowired
     QuizService service;
 
-    @GetMapping("quiz")
+    @GetMapping("/quiz")
     String displayFrontPage(HttpSession session){
         return "frontpage";
     }
 
-    @GetMapping("/cheesequiz")
-    String displayCheeseQuiz(HttpSession session, Model model, @RequestParam(required = false, defaultValue = "0") int qnumber) {
+    @GetMapping("/quiz/{quizName}")
+    //Starts the selected quiz and takes you to the first question of it
+    String dispayQuiz (HttpSession session, Model model, @PathVariable String quizName) {
+        //Store the active quiz in the session
+        session.setAttribute("activeQuiz", service.getQuiz(quizName));
+
+        //Get the first question in the active quiz.
+        model.addAttribute("inquiry", service.getQuestion((Quiz)session.getAttribute("activeQuiz"), 0));
+        return "quizview";
+    }
+
+    @GetMapping("/question")
+    String displayCheeseQuiz(HttpSession session, Model model, @RequestParam int qnumber) {
+
         if (session.getAttribute("qnumber") != null) {
             if ((Integer) session.getAttribute("qnumber") > service.getCheeseQuiz().getQuestionArray().size() - 1) {
                 return "redirect:/result";
             }
         }
-        model.addAttribute("inquiry", service.getQuestion(service.getCheeseQuiz(), qnumber));
+        model.addAttribute("inquiry", service.getQuestion((Quiz)session.getAttribute("activeQuiz"), qnumber));
         return "quizview";
     }
 
@@ -58,13 +71,15 @@ public class QuizController {
         }
 
 
-        return "redirect:cheesequiz?qnumber=" + session.getAttribute("qnumber");
+        return "redirect:question?qnumber=" + session.getAttribute("qnumber");
     }
 
     @GetMapping("/result")
     String displayResultForTheUserWhoIsAGoodBoyOrGirl(HttpSession session, Model model){
         Character resultChar = service.calcMostAnswered((HashMap)session.getAttribute("answerTable"));
-        model.addAttribute("result", service.getCheeseQuiz().getResult(resultChar));
+        Quiz activeQuiz = (Quiz)session.getAttribute("activeQuiz");
+
+        model.addAttribute("result", activeQuiz.getResult(resultChar));
         return "result";
     }
 
