@@ -17,9 +17,12 @@
 }
 .resultImage {
         max-height: 100%;
+        max-width: 100%;
 }
 .imageBox {
     max-height: 250px;
+    max-width: 550;
+    padding: 10px;
 }
       
 
