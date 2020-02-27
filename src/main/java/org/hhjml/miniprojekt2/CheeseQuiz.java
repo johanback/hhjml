@@ -21,10 +21,11 @@ public class CheeseQuiz implements Quiz {
     private List<Question> questionArray = new ArrayList<>();
 
     public CheeseQuiz() {
-        getQuestionArray().add(new Question("Favourite color?", "Blue", "Red", "Green", "Cheesy yellow"));
-        getQuestionArray().add(new Question("Favourite food?", "Cheese, duh!", "MEAT!", "Pasta!", "Oysters"));
-        getQuestionArray().add(new Question("Favourite animal?", "Cat", "Dog", "Giraffe", "Pink fairy armadillo"));
-        getQuestionArray().add(new Question("Favourite sci-fi franchise?", "Doctor who", "Star wars", "Star trek", "Battlestar Galactica"));
+        getQuestionArray().add(new Question("Favourite food?", "Pasta!", "Pizza!", "Hamburgers!", "Spicy food!"));
+        getQuestionArray().add(new Question("Favourite color?", "Green", "Blue", "Yellow", "Red"));
+        getQuestionArray().add(new Question("How would you define your style?", "Fancy", "Casual", "Whatever is on the floor when I wake up", "Rocker"));
+        getQuestionArray().add(new Question("Favourite country?", "Italy", "Netherlands", "The United Kingdom", "USA"));
+        getQuestionArray().add(new Question("Pick a sport", "Soccer", "Curling", "Rugby", "Football"));
     }
 
     public Result getResult(Character resultChar) {

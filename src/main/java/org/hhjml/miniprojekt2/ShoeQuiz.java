@@ -17,11 +17,11 @@ public class ShoeQuiz implements Quiz{
     private List<Question> questionArray = new ArrayList<>();
 
     public ShoeQuiz() {
-        getQuestionArray().add(new Question("Favourite color?", "Blue", "Red", "Green", "Cheesy yellow"));
-        getQuestionArray().add(new Question("Favourite food?", "Cheese, duh!", "MEAT!", "Pasta!", "Oysters"));
-        getQuestionArray().add(new Question("Favourite animal?", "Cat", "Dog", "Giraffe", "Pink fairy armadillo"));
-        getQuestionArray().add(new Question("Favourite sci-fi franchise?", "Doctor who", "Star wars", "Star trek", "Battlestar Galactica"));
-        getQuestionArray().add(new Question("Are you stupid?", "Yes", "Definetely", "I don't know?", "I don't understand the question"));
+        getQuestionArray().add(new Question("Favourite drink?", "Beer", "Coffee", "Milk", "Water"));
+        getQuestionArray().add(new Question("How do you like the outdoors?", "It's the best!", "It's dirty!", "I'd rather stay inside", "Can I run in it?"));
+        getQuestionArray().add(new Question("What is your favourite beer?", "Budweiser", "Beer?", "Whatever is in the fridge", "Something I can hardly pronounce"));
+        getQuestionArray().add(new Question("What do you think about cars?", "It's only a car if it's a convertible", "A mode of transportation", "I'd prefer not to use one", "They're ok I guess!"));
+        getQuestionArray().add(new Question("How do you prefer to travel?", "By horse", "By airplane", "I don't", "By bike"));
     }
 
     public Result getResult(Character resultChar) {
