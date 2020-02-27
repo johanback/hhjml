@@ -17,6 +17,7 @@ public class ShoeQuiz extends Quiz{
         getQuestionArray().add(new Question("Favourite food?", "Cheese, duh!", "MEAT!", "Pasta!", "Oysters"));
         getQuestionArray().add(new Question("Favourite animal?", "Cat", "Dog", "Giraffe", "Pink fairy armadillo"));
         getQuestionArray().add(new Question("Favourite sci-fi franchise?", "Doctor who", "Star wars", "Star trek", "Battlestar Galactica"));
+        getQuestionArray().add(new Question("Are you stupid?", "Yes", "Definetely", "I don't know?", "I don't understand the question"));
     }
 
     public String getResult(Character resultChar) {

@@ -6,7 +6,8 @@
     <title>Document</title>
 </head>
 <body>
-    <a href="/quiz/cheese">TO CHEESE QUIZ</a>
-    <a href="/quiz/shoe">TO SHOE QUIZ</a>
+    <div th:each="name : ${quiznames}">
+        <a th:href="'/quiz/' + ${name}" th:text="'What kind of ' + ${name} + ' are you?'"></a>
+    </div>
 </body>
 </html>

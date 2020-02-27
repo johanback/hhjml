@@ -19,7 +19,8 @@ public class QuizController {
     QuizService service;
 
     @GetMapping("/quiz")
-    String displayFrontPage(HttpSession session){
+    String displayFrontPage(HttpSession session, Model model){
+        model.addAttribute("quiznames", service.getQuizNames());
         return "frontpage";
     }
 
@@ -36,9 +37,10 @@ public class QuizController {
 
     @GetMapping("/question")
     String displayCheeseQuiz(HttpSession session, Model model, @RequestParam int qnumber) {
+        Quiz activeQuiz = (Quiz)session.getAttribute("activeQuiz");
 
         if (session.getAttribute("qnumber") != null) {
-            if ((Integer) session.getAttribute("qnumber") > service.getCheeseQuiz().getQuestionArray().size() - 1) {
+            if ((Integer)session.getAttribute("qnumber") > activeQuiz.getQuestionArray().size() - 1) {
                 return "redirect:/result";
             }
         }
@@ -86,7 +88,7 @@ public class QuizController {
     @PostMapping("/destroy")
     public String destroySession(HttpServletRequest request) {
         request.getSession().invalidate();
-        return "redirect:/cheesequiz";
+        return "redirect:/quiz";
     }
 
 }
