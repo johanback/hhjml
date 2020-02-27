@@ -15,6 +15,14 @@
     font-size: 18px;
 
 }
+.resultImage {
+        max-height: 100%;
+}
+.imageBox {
+    max-height: 250px;
+}
+      
+
 .questionsBox {
     display: block;
     border: solid 1px #e3e3e3;
@@ -124,9 +132,6 @@ input[type=checkbox], input[type=radio] {
     color: #007fbe;
 }
 
-img {
-    width: 75%;
-    margin: auto;
-}
+
 
 

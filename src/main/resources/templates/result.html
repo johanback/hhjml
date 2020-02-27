@@ -19,8 +19,9 @@
     <div class="questionsBox">
     <h1 th:text="'You are ' + ${result.result}">It seems you are nothing.</h1>
     <p th:text="${result.description}">I'm baby helvetica pug gochujang, yr letterpress slow-carb synth everyday carry portland organic ugh heirloom.</p>
-        <img th:src="${result.imgUrl}">
-
+    <div class="imageBox">    
+        <img class="resultImage" th:src="${result.imgUrl}">
+    </div>
 
     <span>
         <form th:action="@{/destroy}" method="post">
