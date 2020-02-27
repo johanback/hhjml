@@ -12,12 +12,10 @@ public class QuizRepository {
 
     CheeseQuiz cheeseQuiz = new CheeseQuiz();
     ShoeQuiz shoeQuiz = new ShoeQuiz();
-    StarWarsQuiz starWarsQuiz = new StarWarsQuiz();
 
     public QuizRepository() {
         quizDB.put(cheeseQuiz.getQuizName(), cheeseQuiz);
         quizDB.put(shoeQuiz.getQuizName(), shoeQuiz);
-        quizDB.put(starWarsQuiz.getQuizName(), starWarsQuiz);
     }
 
     public Quiz getQuiz(String quizName) {

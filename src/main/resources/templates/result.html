@@ -18,14 +18,18 @@
     <div class="all">
     <div class="questionsBox">
     <h1 th:text="'You are ' + ${result.result}">It seems you are nothing.</h1>
-    <h2 th:text="${result.description}">I'm baby helvetica pug gochujang, yr letterpress slow-carb synth everyday carry portland organic ugh heirloom.</h2>
+    <p th:text="${result.description}">I'm baby helvetica pug gochujang, yr letterpress slow-carb synth everyday carry portland organic ugh heirloom.</p>
         <img th:src="${result.imgUrl}">
 
-    <div>
+
+    <span>
         <form th:action="@{/destroy}" method="post">
-            <input type="submit" value="Start over" />
+            <input type="submit" value="Select another fun quiz!" />
         </form>
-    </div>
+        <form th:action="@{/restartquiz}" method="post">
+            <input type="submit" value="Take this quiz again!" />
+        </form>
+    </span>
 </div>
 </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
