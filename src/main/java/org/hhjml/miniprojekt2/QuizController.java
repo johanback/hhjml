@@ -17,6 +17,11 @@ public class QuizController {
     @Autowired
     QuizService service;
 
+    @GetMapping("quiz")
+    String displayFrontPage(HttpSession session){
+        return "frontpage";
+    }
+
     @GetMapping("/cheesequiz")
     String displayCheeseQuiz(HttpSession session, Model model, @RequestParam(required = false, defaultValue = "0") int qnumber) {
         if (session.getAttribute("qnumber") != null) {
