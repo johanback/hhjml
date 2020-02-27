@@ -26,9 +26,7 @@ public class QuizRepository {
 
     public ArrayList<String> getQuizNames () {
         ArrayList<String> quizNames = new ArrayList<>();
-        for (String s : quizDB.keySet()) {
-            quizNames.add(s);
-        }
+        quizNames.addAll(quizDB.keySet());
         return quizNames;
     }
 

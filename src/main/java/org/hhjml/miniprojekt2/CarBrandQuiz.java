@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CarBrandQuiz implements Quiz {
-    private String quizName = "carbrand";
+    private String quizName = "car brand";
     private Result result1 = new Result("Audi", "Audi AG is a German automobile manufacturer that designs, engineers, produces, " +
             "markets and distributes luxury vehicles.", "audi.jpg");
     private Result result2 = new Result("Renault", "Groupe Renault is a French multinational automobile manufacturer established " +
