@@ -4,7 +4,6 @@ import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 @Repository
 public class QuizRepository {
@@ -25,12 +24,10 @@ public class QuizRepository {
 
     public ArrayList<String> getQuizNames () {
         ArrayList<String> quizNames = new ArrayList<>();
-
         for (String s : quizDB.keySet()) {
             quizNames.add(s);
         }
         return quizNames;
-
     }
 
 }

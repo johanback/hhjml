@@ -28,14 +28,6 @@ class Miniprojekt2ApplicationTests {
 		Assertions.assertEquals(1, toBeTested.get('C'));
 	}
 
-	@Test
-	void testIfDraw() {
-		HashMap<Character, Integer> toBeTested = new HashMap<>();
-		toBeTested.put('B', 3);
-		toBeTested.put('A', 3);
-//		Assertions.assertEquals();
-	}
-
 
 
 }

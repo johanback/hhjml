@@ -27,6 +27,7 @@ public class QuizController {
     @GetMapping("/quiz/{quizName}")
     //Starts the selected quiz and takes you to the first question of it
     String dispayQuiz (HttpSession session, Model model, @PathVariable String quizName) {
+        session.setAttribute("qnumber", 0);
         //Store the active quiz in the session
         session.setAttribute("activeQuiz", service.getQuiz(quizName));
 
@@ -36,7 +37,7 @@ public class QuizController {
     }
 
     @GetMapping("/question")
-    String displayCheeseQuiz(HttpSession session, Model model, @RequestParam int qnumber) {
+    String displayCheeseQuiz(HttpSession session, Model model, @RequestParam(required = false, defaultValue = "0") int qnumber) {
         Quiz activeQuiz = (Quiz)session.getAttribute("activeQuiz");
 
         if (session.getAttribute("qnumber") != null) {
@@ -44,13 +45,19 @@ public class QuizController {
                 return "redirect:/result";
             }
         }
+
         model.addAttribute("inquiry", service.getQuestion((Quiz)session.getAttribute("activeQuiz"), qnumber));
         return "quizview";
     }
 
     @PostMapping("/registeranswer")
-    String registerAnswer(HttpSession session, char answer) {
-        System.out.println(answer);
+    String registerAnswer(HttpSession session, Character answer) {
+
+        //To prevent crash when user presses "next" without choosing an option
+        if (answer == null) {
+            return "redirect:question?qnumber=" + session.getAttribute("qnumber");
+        }
+
         //Get the hashmap from the session
         HashMap<Character, Integer> answerTable = (HashMap) session.getAttribute("answerTable");
         if (answerTable == null) {
@@ -68,12 +75,11 @@ public class QuizController {
             session.setAttribute("qnumber", (Integer) session.getAttribute("qnumber") + 1);
         }
 
-
         return "redirect:question?qnumber=" + session.getAttribute("qnumber");
     }
 
     @GetMapping("/result")
-    String displayResultForTheUserWhoIsAGoodBoyOrGirl(HttpSession session, Model model){
+    String displayResult (HttpSession session, Model model){
         session.removeAttribute("qnumber");
         Character resultChar = service.calcMostAnswered((HashMap)session.getAttribute("answerTable"));
         session.removeAttribute("answerTable");

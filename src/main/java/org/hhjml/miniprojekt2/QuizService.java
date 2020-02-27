@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Random;
 
 @Service
 public class QuizService {
@@ -38,7 +39,16 @@ public class QuizService {
         for (Character c: answerTable.keySet()) {
             if (answerTable.get(c) > compareValue){
                 compareValue = answerTable.get(c);
-                mostAnswered= c;
+                mostAnswered = c;
+            }
+        }
+
+        for (Character c: answerTable.keySet()) {
+            if (mostAnswered.equals(c)) {
+                continue;
+            } else if (answerTable.get(c) == compareValue) {
+                Random r = new Random();
+                mostAnswered = (r.nextInt(2) == 0 ? mostAnswered : c);
             }
         }
         return mostAnswered;
