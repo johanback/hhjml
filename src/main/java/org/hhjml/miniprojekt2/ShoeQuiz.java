@@ -5,14 +5,14 @@ import java.util.List;
 
 public class ShoeQuiz implements Quiz{
     private String quizName = "shoe";
-    private Result result1 = new Result("Parmesan", "Parmigiano-Reggiano or Parmesan is an Italian hard, granular cheese. " +
-            "It has been called the \"King of Cheeses\" and a \"practically perfect food\".", "parmesan.jpg");
-    private Result result2 = new Result("Parmesan", "Parmigiano-Reggiano or Parmesan is an Italian hard, granular cheese. " +
-            "It has been called the \"King of Cheeses\" and a \"practically perfect food\".", "parmesan.jpg");
-    private Result result3 = new Result("Parmesan", "Parmigiano-Reggiano or Parmesan is an Italian hard, granular cheese. " +
-            "It has been called the \"King of Cheeses\" and a \"practically perfect food\".", "parmesan.jpg");
-    private Result result4 = new Result("Parmesan", "Parmigiano-Reggiano or Parmesan is an Italian hard, granular cheese. " +
-            "It has been called the \"King of Cheeses\" and a \"practically perfect food\".", "parmesan.jpg");
+    private Result result1 = new Result("boots", "A boot, plural boots, is a type of specific footwear. " +
+            "Most boots mainly cover the foot and the ankle, while some also cover some part of the lower calf.", "boots.jpg");
+    private Result result2 = new Result("pumps", "A court shoe (British English), coort shoe (Scottish English), " +
+            "or pump (American English), is a shoe with a low-cut front, or vamp, with either a shoe buckle or a black bow as ostensible fastening.", "pumps.jpg");
+    private Result result3 = new Result("slippers", "Slippers are light footwear that are easy to put on and off and are intended to be worn indoors, " +
+            "particularly at home.", "slippers.jpg");
+    private Result result4 = new Result("sneakers", "Sneakers (also called trainers, athletic shoes, tennis shoes, gym shoes, kicks, sport shoes or runners) " +
+            "are shoes primarily designed for sports or other forms of physical exercise, but which are now also widely used for everyday wear.", "sneakers.jpg");
 
     private List<Question> questionArray = new ArrayList<>();
 
