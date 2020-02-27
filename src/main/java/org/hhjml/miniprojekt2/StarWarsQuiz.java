@@ -6,10 +6,14 @@ import java.util.List;
 public class StarWarsQuiz implements Quiz{
 
     private String quizName = "Star Wars character";
-    private String result1 = "Anakin Skywalker";
-    private String result2 = "Ahsoka Tano";
-    private String result3 = "Sheev Palpatine";
-    private String result4 = "Han Solo";
+    private Result result1 = new Result("Parmesan", "Parmigiano-Reggiano or Parmesan is an Italian hard, granular cheese. " +
+            "It has been called the \"King of Cheeses\" and a \"practically perfect food\".", "parmesan.jpg");
+    private Result result2 = new Result("Parmesan", "Parmigiano-Reggiano or Parmesan is an Italian hard, granular cheese. " +
+            "It has been called the \"King of Cheeses\" and a \"practically perfect food\".", "parmesan.jpg");
+    private Result result3 = new Result("Parmesan", "Parmigiano-Reggiano or Parmesan is an Italian hard, granular cheese. " +
+            "It has been called the \"King of Cheeses\" and a \"practically perfect food\".", "parmesan.jpg");
+    private Result result4 = new Result("Parmesan", "Parmigiano-Reggiano or Parmesan is an Italian hard, granular cheese. " +
+            "It has been called the \"King of Cheeses\" and a \"practically perfect food\".", "parmesan.jpg");
 
     private List<Question> questionArray = new ArrayList<>();
 
@@ -21,7 +25,7 @@ public class StarWarsQuiz implements Quiz{
         getQuestionArray().add(new Question("Are you stupid?", "Yes", "Definetely", "I don't know?", "I don't understand the question"));
     }
 
-    public String getResult(Character resultChar) {
+    public Result getResult(Character resultChar) {
         switch (resultChar){
             case 'A':
                 return result1;
@@ -32,7 +36,7 @@ public class StarWarsQuiz implements Quiz{
             case 'D':
                 return result4;
             default:
-                return "No fucking clue mate";
+                return null;
         }
     }
 
