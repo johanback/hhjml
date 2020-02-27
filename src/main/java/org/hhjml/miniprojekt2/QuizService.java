@@ -24,6 +24,14 @@ public class QuizService {
         return repository.getQuizNames();
     }
 
+    public void addScore (HashMap<Character, Integer> answerTable, char answer) {
+        if (answerTable.containsKey(answer)) {
+            answerTable.put(answer, answerTable.get(answer) + 1);
+        } else {
+            answerTable.put(answer, 1);
+        }
+    }
+
     public Character calcMostAnswered(HashMap<Character, Integer> answerTable){
         Integer compareValue = 0;
         Character mostAnswered = null;

@@ -59,11 +59,7 @@ public class QuizController {
         }
 
         //Add the score to the right key
-        if (answerTable.containsKey(answer)) {
-            answerTable.put(answer, answerTable.get(answer) + 1);
-        } else {
-            answerTable.put(answer, 1);
-        }
+        service.addScore(answerTable, answer);
 
         //Save the current question requestparam in the session
         if (session.getAttribute("qnumber") == null) {
@@ -78,7 +74,9 @@ public class QuizController {
 
     @GetMapping("/result")
     String displayResultForTheUserWhoIsAGoodBoyOrGirl(HttpSession session, Model model){
+        session.removeAttribute("qnumber");
         Character resultChar = service.calcMostAnswered((HashMap)session.getAttribute("answerTable"));
+        session.removeAttribute("answerTable");
         Quiz activeQuiz = (Quiz)session.getAttribute("activeQuiz");
 
         model.addAttribute("result", activeQuiz.getResult(resultChar));
