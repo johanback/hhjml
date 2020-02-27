@@ -3,7 +3,7 @@
 }
 
 .all {
-    width:500px;
+    width:600px;
     position: fixed; 
     top: 50%; 
     left: 50%; 
@@ -68,9 +68,11 @@ ol, ul {
 }
 
 .answerList li {
-    padding: 3px 0;
+    padding: 15px 0;
 }
 .answerList label {
+    margin-top: -30px;
+    margin-left: 30px;
     display: block;
     padding: 6px;
     border-radius: 6px;
