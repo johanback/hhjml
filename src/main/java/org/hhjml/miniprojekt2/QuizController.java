@@ -21,6 +21,7 @@ public class QuizController {
     @GetMapping("/quiz")
     String displayFrontPage(HttpSession session, Model model){
         model.addAttribute("quiznames", service.getQuizNames());
+        Math.random();
         return "frontpage";
     }
 

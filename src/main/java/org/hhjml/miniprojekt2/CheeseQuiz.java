@@ -3,7 +3,7 @@ package org.hhjml.miniprojekt2;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CheeseQuiz extends Quiz {
+public class CheeseQuiz implements Quiz {
     private String quizName = "cheese";
     private String result1 = "Parmesan";
     private String result2 = "Cheddar";
@@ -38,7 +38,7 @@ public class CheeseQuiz extends Quiz {
         return questionArray;
     }
 
-    @Override
+
     public String getQuizName() {
         return quizName;
     }
