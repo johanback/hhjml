@@ -5,10 +5,16 @@ import java.util.List;
 
 public class CheeseQuiz implements Quiz {
     private String quizName = "cheese";
-    private String result1 = "Parmesan";
-    private String result2 = "Cheddar";
-    private String result3 = "Gouda";
-    private String result4 = "Pepper jack";
+    private Result result1 = new Result("Parmesan", "Parmigiano-Reggiano or Parmesan is an Italian hard, granular cheese. " +
+            "It has been called the \"King of Cheeses\" and a \"practically perfect food\".", "parmesan.jpg");
+    private Result result2 = new Result("Gouda", "Parmigiano-Reggiano or Parmesan is an Italian hard, granular cheese. " +
+            "It has been called the \"King of Cheeses\" and a \"practically perfect food\".", "gouda.jpg");
+    private Result result3 = new Result("Parmesan", "Parmigiano-Reggiano or Parmesan is an Italian hard, granular cheese. " +
+            "It has been called the \"King of Cheeses\" and a \"practically perfect food\".", "parmesan.jpg");
+    private Result result4 = new Result("Parmesan", "Parmigiano-Reggiano or Parmesan is an Italian hard, granular cheese. " +
+            "It has been called the \"King of Cheeses\" and a \"practically perfect food\".", "parmesan.jpg");
+
+
 
     private List<Question> questionArray = new ArrayList<>();
 
@@ -19,7 +25,7 @@ public class CheeseQuiz implements Quiz {
         getQuestionArray().add(new Question("Favourite sci-fi franchise?", "Doctor who", "Star wars", "Star trek", "Battlestar Galactica"));
     }
 
-    public String getResult(Character resultChar) {
+    public Result getResult(Character resultChar) {
         switch (resultChar){
             case 'A':
                 return result1;
@@ -30,7 +36,7 @@ public class CheeseQuiz implements Quiz {
             case 'D':
                 return result4;
             default:
-                return "No fucking clue mate";
+                return null;
         }
     }
 

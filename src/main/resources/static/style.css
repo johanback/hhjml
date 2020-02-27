@@ -116,4 +116,9 @@ input[type=checkbox], input[type=radio] {
     color: #007fbe;
 }
 
+img {
+    width: 75%;
+    margin: auto;
+}
+
 
