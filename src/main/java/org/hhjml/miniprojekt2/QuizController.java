@@ -34,6 +34,7 @@ public class QuizController {
         session.setAttribute("activeQuiz", service.getQuiz(quizName));
 
         //Get the first question in the active quiz.
+        model.addAttribute("quiz", session.getAttribute("activeQuiz"));
         model.addAttribute("inquiry", service.getQuestion((Quiz)session.getAttribute("activeQuiz"), 0));
         return "quizview";
     }
@@ -47,7 +48,7 @@ public class QuizController {
                 return "redirect:/result";
             }
         }
-
+        model.addAttribute("quiz", activeQuiz);
         model.addAttribute("inquiry", service.getQuestion((Quiz)session.getAttribute("activeQuiz"), qnumber));
         return "quizview";
     }

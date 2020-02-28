@@ -13,6 +13,7 @@
 <body>
     <div class="all">
         <div class="questionsBox">
+            <h1 th:object="${quiz}" th:text="'What kind of ' + *{quizName} + ' are you?'">Test</h1>
             <form action="/registeranswer" method="POST">
 
                 <div class="questions">
