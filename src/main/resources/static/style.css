@@ -43,6 +43,12 @@ body {
     margin: 0 10px;
     background-color: white;
 }
+
+.questionsBox h2 {
+    font-size: 1vw;
+    color: darkgrey;
+}
+
 .questions {
     background: #222222;
     color: #FFF;
@@ -154,6 +160,11 @@ input[type=checkbox], input[type=radio] {
     padding: 0 10px;
     background: #FFF;
     color: #007fbe;
+}
+
+.nextButton .currentQuestionDisplay {
+    text-align: left;
+    margin-right: 300px;
 }
 
 
