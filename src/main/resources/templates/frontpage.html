@@ -13,7 +13,8 @@
 <body>
     <div class="all">
         <div class="questionsBox">
-            <h1>Choose your quiz</h1>
+            <h1>HHJML Quizzes Inc.</h1>
+            <h2>Choose your quiz</h2>
             <div class="individualQuiz" th:each="name : ${quiznames}">
                 <a th:href="'/quiz/' + ${name}" th:text="'What kind of ' + ${name} + ' are you?'"></a>
             </div>
