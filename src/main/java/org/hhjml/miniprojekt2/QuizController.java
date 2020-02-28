@@ -22,15 +22,18 @@ public class QuizController {
     @GetMapping("/quiz")
     String displayFrontPage(HttpSession session, Model model){
 
-
+        Random r = new Random();
+        int randomNumber = r.nextInt(service.getQuizNames().size() - 1);
+        String randomName = (String)service.getQuizNames().get(randomNumber);
         model.addAttribute("quiznames", service.getQuizNames());
+        model.addAttribute("randomQuiz", randomName);
         Math.random();
         return "frontpage";
     }
 
 
 
-    @GetMapping("/quiz/{izName}")
+    @GetMapping("/quiz/{quizName}")
     //Starts the selected quiz and takes you to the first question of it
     String dispayQuiz (HttpSession session, Model model, @PathVariable String quizName) {
         session.setAttribute("qnumber", 0);
@@ -52,11 +55,7 @@ public class QuizController {
             }
         }
 
-        Random r = new Random();
-        int randomNumber = r.nextInt(service.getQuizNames().size() - 1);
-        String randomName = (String)service.getQuizNames().get(randomNumber);
 
-        model.addAttribute("randomQuiz", service.getQuestion((Quiz)session.getAttribute("randomName"), qnumber));
 
         model.addAttribute("inquiry", service.getQuestion((Quiz)session.getAttribute("activeQuiz"), qnumber));
         return "quizview";
