@@ -13,8 +13,8 @@ public class WhoAreYou implements Quiz {
     private String quizName = "member of HHJML";
 
     private Result result1 = new Result("Ludwig", "Ludwig likes trains.", "parmesan.jpg");
-    private Result result2 = new Result("Johan", "Johan is quiet tall.", "gouda.jpg");
-    private Result result3 = new Result("Henrik", "Henrik like plaid shirts and screwdrivers.", "cheddar.jpg");
+    private Result result2 = new Result("Johan", "Johan is quite tall.", "gouda.jpg");
+    private Result result3 = new Result("Henrik", "Henrik likes plaid shirts and screwdrivers.", "cheddar.jpg");
     private Result result4 = new Result("Hanna", "Hanna often secretly takes pictures of strangers' dogs on the subway.", "pepperjack.jpg");
 
     private List<Question> questionArray = new ArrayList<>();
