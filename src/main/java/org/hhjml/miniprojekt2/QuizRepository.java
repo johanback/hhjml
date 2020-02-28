@@ -14,12 +14,14 @@ public class QuizRepository {
     ShoeQuiz shoeQuiz = new ShoeQuiz();
     MarvelQuiz marvelQuiz = new MarvelQuiz();
     CarBrandQuiz carBrandQuiz = new CarBrandQuiz();
+    RailWayEngineQuiz railWayEngineQuiz = new RailWayEngineQuiz();
 
     public QuizRepository() {
         quizDB.put(cheeseQuiz.getQuizName(), cheeseQuiz);
         quizDB.put(shoeQuiz.getQuizName(), shoeQuiz);
         quizDB.put(marvelQuiz.getQuizName(), marvelQuiz);
         quizDB.put(carBrandQuiz.getQuizName(), carBrandQuiz);
+        quizDB.put(railWayEngineQuiz.getQuizName(), railWayEngineQuiz);
     }
 
     public Quiz getQuiz(String quizName) {
