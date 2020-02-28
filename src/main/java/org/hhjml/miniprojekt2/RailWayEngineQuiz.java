@@ -21,6 +21,7 @@ public class RailWayEngineQuiz implements Quiz {
         questionArray.add(new Question("What is your favourite metal?", "Gold.", "Steel.", "The music kind", "Whatever is shiny."));
         questionArray.add(new Question("What is your opinion on climate change?", "It's not real.", "We've known about it forever...", "F*ck the climate!", "Something has to be done now!"));
         questionArray.add(new Question("What is most important - speed or strength?", "Neither.", "Strength, but you can never skip leg day", "POWEEEEER!", "I'd say 50/50"));
+        questionArray.add(new Question("What food do you prefer?", "Unicorns", "Meatballs.", "Deepfried stuff!", "Whatever, as long as it is served with a sweet Reisling"));
     }
 
     @Override
