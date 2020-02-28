@@ -44,7 +44,7 @@ body {
     background-color: white;
 }
 
-.questionsBox h3 {
+.questionsBox .tinyHeader {
     font-size: 1vw;
     color: darkgrey;
 }
