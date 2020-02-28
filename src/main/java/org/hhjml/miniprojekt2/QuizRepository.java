@@ -14,6 +14,7 @@ public class QuizRepository {
     ShoeQuiz shoeQuiz = new ShoeQuiz();
     MarvelQuiz marvelQuiz = new MarvelQuiz();
     CarBrandQuiz carBrandQuiz = new CarBrandQuiz();
+    MusicGenreQuiz musicGenreQuiz = new MusicGenreQuiz();
     RailWayEngineQuiz railWayEngineQuiz = new RailWayEngineQuiz();
 
     public QuizRepository() {
@@ -21,6 +22,7 @@ public class QuizRepository {
         quizDB.put(shoeQuiz.getQuizName(), shoeQuiz);
         quizDB.put(marvelQuiz.getQuizName(), marvelQuiz);
         quizDB.put(carBrandQuiz.getQuizName(), carBrandQuiz);
+        quizDB.put(musicGenreQuiz.getQuizName(), musicGenreQuiz);
         quizDB.put(railWayEngineQuiz.getQuizName(), railWayEngineQuiz);
     }
 
