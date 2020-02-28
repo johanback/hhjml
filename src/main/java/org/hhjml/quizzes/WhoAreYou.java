@@ -14,7 +14,7 @@ public class WhoAreYou implements Quiz {
 
     private Result result1 = new Result("Ludwig", "Ludwig likes trains.", "ludwig.jpg");
     private Result result2 = new Result("Johan", "Johan is quite tall.", "johan.jpg");
-    private Result result3 = new Result("Henrik", "Henrik likes plaid shirts and screwdrivers.", "cheddar.jpg");
+    private Result result3 = new Result("Henrik", "Henrik likes plaid shirts and screwdrivers.", "henrik.jpg");
     private Result result4 = new Result("Hanna", "Hanna often secretly takes pictures of strangers' dogs on the subway.", "Hanna.jpg");
 
     private List<Question> questionArray = new ArrayList<>();
