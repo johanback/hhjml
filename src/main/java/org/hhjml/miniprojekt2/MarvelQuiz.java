@@ -5,7 +5,7 @@ import java.util.List;
 
 public class MarvelQuiz implements Quiz {
 
-    private String quizName = "Marvel";
+    private String quizName = "marvel hero";
 
     private Result result1 = new Result("Iron-man", "Genius. Billionaire. Playboy. Philanthropist.", "iron man.jpg");
     private Result result2 = new Result("Hulk", "Dr. Bruce Banner lives a life caught between the soft-spoken scientist he’s always been and the uncontrollable green monster powered by his rage.", "hulc.jpg");
