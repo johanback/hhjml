@@ -13,7 +13,7 @@
 <body>
     <div class="all">
         <div class="questionsBox">
-            <h1 th:object="${quiz}" th:text="'What kind of ' + *{quizName} + ' are you?'">Test</h1>
+            <h2 th:object="${quiz}" th:text="'What kind of ' + *{quizName} + ' are you?'">Test</h2>
             <form action="/registeranswer" method="POST">
 
                 <div class="questions">
@@ -42,6 +42,7 @@
                 </ul>
                 <div>
                     <div class="nextButton">
+                        <span class="currentQuestionDisplay" th:text="'Question: ' + ${session.qnumber+1} + '/' + ${session.quizSize}"></span>
                     <input class="questionsRow" type="submit" value="Next">
                     </div>
                 </div>

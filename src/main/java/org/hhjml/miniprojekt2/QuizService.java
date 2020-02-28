@@ -22,6 +22,10 @@ public class QuizService {
         return repository.getQuiz(quizName);
     }
 
+    public int getQuizSize (String quizName) {
+        return repository.getQuiz(quizName).getQuestionArray().size();
+    }
+
     public ArrayList<String> getQuizNames () {
         return repository.getQuizNames();
     }
