@@ -1,6 +1,5 @@
 package org.hhjml.miniprojekt2;
 
-import org.hhjml.quizzes.Quiz;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.HashMap;
+import java.util.Random;
 
 @Controller
 public class QuizController {
@@ -21,7 +21,12 @@ public class QuizController {
 
     @GetMapping("/quiz")
     String displayFrontPage(HttpSession session, Model model){
+
+        Random r = new Random();
+        int randomNumber = r.nextInt(service.getQuizNames().size() - 1);
+        String randomName = (String)service.getQuizNames().get(randomNumber);
         model.addAttribute("quiznames", service.getQuizNames());
+        model.addAttribute("randomQuiz", randomName);
         Math.random();
         return "frontpage";
     }
