@@ -1,9 +1,12 @@
-package org.hhjml.miniprojekt2;
+package org.hhjml.quizzes;
+
+import org.hhjml.miniprojekt2.Question;
+import org.hhjml.miniprojekt2.Result;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ShoeQuiz implements Quiz{
+public class ShoeQuiz implements Quiz {
     private String quizName = "shoe";
     private Result result1 = new Result("boots", "A boot, plural boots, is a type of specific footwear. " +
             "Most boots mainly cover the foot and the ankle, while some also cover some part of the lower calf.", "boots.jpg");

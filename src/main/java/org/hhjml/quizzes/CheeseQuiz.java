@@ -1,5 +1,7 @@
-package org.hhjml.miniprojekt2;
+package org.hhjml.quizzes;
 
+import org.hhjml.miniprojekt2.Question;
+import org.hhjml.miniprojekt2.Result;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
