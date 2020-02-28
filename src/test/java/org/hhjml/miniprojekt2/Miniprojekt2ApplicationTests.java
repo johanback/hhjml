@@ -18,6 +18,32 @@ class Miniprojekt2ApplicationTests {
 	}
 
 	@Test
+	void givesTheCorrectName(){
+		CheeseQuiz cheeseQuiz = new CheeseQuiz();
+		MarvelQuiz marvelQuiz = new MarvelQuiz();
+		ShoeQuiz shoeQuiz = new ShoeQuiz();
+		Assertions.assertEquals("cheese", cheeseQuiz.getQuizName());
+		Assertions.assertEquals("Marvel", marvelQuiz.getQuizName());
+		Assertions.assertEquals("shoe", shoeQuiz.getQuizName());
+	}
+
+	@Test
+	void calcResultWorksAsExpected() {
+		HashMap<Character, Integer> hm = new HashMap<>();
+		hm.put('A', 2);
+		hm.put('B', 5);
+		hm.put('C', 2);
+		hm.put('D', 1);
+		HashMap<Character, Integer> hm2 = new HashMap<>();
+		hm2.put('A', 2);
+		hm2.put('B', 1);
+		hm2.put('C', 1);
+		hm2.put('D', 3);
+		Assertions.assertEquals('B', service.calcMostAnswered(hm));
+		Assertions.assertEquals('D', service.calcMostAnswered(hm2));
+	}
+
+	@Test
 	void testAddScore () {
 		HashMap<Character, Integer> toBeTested = new HashMap<>();
 		toBeTested.put('B', 3);
