@@ -19,7 +19,7 @@ public class CarBrandQuiz implements Quiz {
     private List<Question> questionArray = new ArrayList<>();
 
     public CarBrandQuiz() {
-        getQuestionArray().add(new Question("How do you like speed?", "Fastest possible is the only choice", "I wish I was faster", "Alot, as long as it is also quiet", "Doesn't matter, as long as it's done in style"));
+        getQuestionArray().add(new Question("How do you like speed?", "Fastest possible is the only choice", "I wish I was faster", "A lot, as long as it is also quiet", "Doesn't matter, as long as it's done in style"));
         getQuestionArray().add(new Question("When you accomplish a task, I...", "...make sure everything is done properly.", "...finish as soon as I can, even if the result is bad.", "...want to be as efficient as possible.", "...don't."));
         getQuestionArray().add(new Question("Sunglasses are...", "...neccesary!", "...useless.", "...an opportunity!", "...sunglasses?"));
         getQuestionArray().add(new Question("Favourite food?", "Schnitzel!", "Baguette", "Pizza hut", "Tiny schnitzels"));
