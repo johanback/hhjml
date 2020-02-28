@@ -14,7 +14,7 @@ public class MusicGenreQuiz implements Quiz {
     private Result result1 = new Result("Death metal", "Hard, fast and with indecipherable vocals, you make everyone's friends shift in their seats when someone puts you on during a party.", "deathmetal.jpg");
     private Result result2 = new Result("Jazz", "Technical, inaccessible and elitist, you turn your listeners into the most obnoxious people around, ruining friendships and relationships alike.", "jazz.jpg");
     private Result result3 = new Result("Pop", "Simple, easy to listen to, and commercially viable, you are the envy of the other genres, although they would never dare admit it.", "pop.jpg");
-    private Result result4 = new Result("Rap", "Wether it's quick and techincal or mumbled and autotuned, you have taken the world by storm. While other genres debate on whether something with no melody can be considered music you are too busy partying and living it up to care.", "rap.jpg");
+    private Result result4 = new Result("Rap", "Whether it's quick and techincal or mumbled and autotuned, you have taken the world by storm. While other genres debate on whether something with no melody can be considered music you are too busy partying and living it up to care.", "rap.jpg");
 
     private List<Question> questionArray = new ArrayList<>();
 
