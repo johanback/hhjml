@@ -10,7 +10,7 @@ public class MarvelQuiz implements Quiz {
     private Result result1 = new Result("Iron-man", "Genius. Billionaire. Playboy. Philanthropist.", "iron man.jpg");
     private Result result2 = new Result("Hulk", "Dr. Bruce Banner lives a life caught between the soft-spoken scientist he’s always been and the uncontrollable green monster powered by his rage.", "hulc.jpg");
     private Result result3 = new Result("Captian America", "Recipient of the Super-Soldier serum, World War II hero Steve Rogers fights for American ideals as one of the world’s mightiest heroes and the leader of the Avengers.", "captain america.jpg");
-    private Result result4 = new Result("Thor", "The son of Odin uses his mighty abilities as the God of Thunder to protect his home Asgard and planet Earth alike.", "pepperjack.jpg");
+    private Result result4 = new Result("Thor", "The son of Odin uses his mighty abilities as the God of Thunder to protect his home Asgard and planet Earth alike.", "Ebba thor.jpg");
 
     private List<Question> questionArray = new ArrayList<>();
 
