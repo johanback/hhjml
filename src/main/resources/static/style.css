@@ -112,7 +112,19 @@ input[type=checkbox], input[type=radio] {
     margin: 4px 0 0;
     margin-top: 1px;
     line-height: normal;
+    padding: 4px;
 }
+
+.formInLine{
+    display: inline-block;
+    text-align: right;
+    }
+
+
+.nextButton {
+    text-align: right;
+    }
+
 .questionsRow {
     background: #dee3e6;
     margin: 0 -20px;

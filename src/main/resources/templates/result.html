@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<head>
+
     <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
@@ -24,12 +22,16 @@
     </div>
 
     <span>
-        <form th:action="@{/destroy}" method="post">
-            <input type="submit" value="Select another fun quiz!" />
-        </form>
-        <form th:action="@{/restartquiz}" method="post">
-            <input type="submit" value="Take this quiz again!" />
-        </form>
+        <div class="formInLine">
+            <form th:action="@{/destroy}" method="post">
+                <input type="submit" value="Select another fun quiz!" />
+            </form>
+        </div>
+        <div class="formInLine">
+            <form th:action="@{/restartquiz}" method="post">
+                <input type="submit" value="Take this quiz again!" />
+            </form>
+        </div>
     </span>
 </div>
 </div>
