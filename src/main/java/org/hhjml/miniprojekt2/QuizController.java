@@ -23,11 +23,9 @@ public class QuizController {
     @GetMapping("/quiz")
     String displayFrontPage(HttpSession session, Model model){
 
-        Random r = new Random();
-        int randomNumber = r.nextInt(service.getQuizNames().size() - 1);
-        String randomName = (String)service.getQuizNames().get(randomNumber);
+        model.addAttribute("randomQuiz",service.getRandomQuiz());
         model.addAttribute("quiznames", service.getQuizNames());
-        model.addAttribute("randomQuiz", randomName);
+
         Math.random();
         return "frontpage";
     }
