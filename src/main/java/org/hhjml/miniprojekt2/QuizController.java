@@ -25,8 +25,6 @@ public class QuizController {
 
         model.addAttribute("randomQuiz",service.getRandomQuiz());
         model.addAttribute("quiznames", service.getQuizNames());
-
-        Math.random();
         return "frontpage";
     }
 
