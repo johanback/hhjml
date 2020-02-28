@@ -17,6 +17,9 @@
             <div class="individualQuiz" th:each="name : ${quiznames}">
                 <a th:href="'/quiz/' + ${name}" th:text="'What kind of ' + ${name} + ' are you?'"></a>
             </div>
+            <div class="individualQuiz">
+                <a th:href="'/quiz/' + ${randomQuiz}" th:text="'Random Quiz'"></a>
+            </div>
         </div>
     </div>
 </body>
