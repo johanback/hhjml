@@ -1,10 +1,12 @@
 package org.hhjml.miniprojekt2;
 
+import org.hhjml.quizzes.CheeseQuiz;
+import org.hhjml.quizzes.MarvelQuiz;
+import org.hhjml.quizzes.ShoeQuiz;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.util.Assert;
 
 import java.util.HashMap;
 

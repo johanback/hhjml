@@ -1,5 +1,6 @@
 package org.hhjml.miniprojekt2;
 
+import org.hhjml.quizzes.*;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
