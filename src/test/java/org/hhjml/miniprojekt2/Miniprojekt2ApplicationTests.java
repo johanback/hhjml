@@ -55,7 +55,4 @@ class Miniprojekt2ApplicationTests {
 		Assertions.assertEquals(3, toBeTested.get('A'));
 		Assertions.assertEquals(1, toBeTested.get('C'));
 	}
-
-
-
 }

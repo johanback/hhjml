@@ -106,5 +106,4 @@ public class QuizController {
         Quiz activeQuiz = (Quiz)session.getAttribute("activeQuiz");
         return "redirect:/quiz/" + activeQuiz.getQuizName();
     }
-
 }
