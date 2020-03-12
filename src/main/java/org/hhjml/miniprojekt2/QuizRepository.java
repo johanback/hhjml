@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -14,28 +15,28 @@ public class QuizRepository {
     @Autowired
     DataSource dataSource;
 
-    HashMap<String, Quiz> quizDB = new HashMap<>();
-
-    CheeseQuiz cheeseQuiz = new CheeseQuiz();
-    ShoeQuiz shoeQuiz = new ShoeQuiz();
-    MarvelQuiz marvelQuiz = new MarvelQuiz();
-    CarBrandQuiz carBrandQuiz = new CarBrandQuiz();
-    MusicGenreQuiz musicGenreQuiz = new MusicGenreQuiz();
-    RailWayEngineQuiz railWayEngineQuiz = new RailWayEngineQuiz();
-    WhoAreYou whoAreYou = new WhoAreYou();
-
-    public QuizRepository() {
-        quizDB.put(cheeseQuiz.getQuizName(), cheeseQuiz);
-        quizDB.put(shoeQuiz.getQuizName(), shoeQuiz);
-        quizDB.put(marvelQuiz.getQuizName(), marvelQuiz);
-        quizDB.put(carBrandQuiz.getQuizName(), carBrandQuiz);
-        quizDB.put(musicGenreQuiz.getQuizName(), musicGenreQuiz);
-        quizDB.put(railWayEngineQuiz.getQuizName(), railWayEngineQuiz);
-        quizDB.put(whoAreYou.getQuizName(), whoAreYou);
-    }
-
     public Quiz getQuiz(String quizName) {
-        return quizDB.get(quizName);
+
+        Quiz quiz = new Quiz();
+
+        try (Connection conn = dataSource.getConnection()) {
+            PreparedStatement ps = conn.prepareStatement("SELECT * FROM Quiz" +
+                                                            "JOIN Question ON Quiz.id=question.quizid" +
+                                                            "JOIN Answer ON Question.id=Answer.questionid" +
+                                                            "JOIN Result ON Quiz.id=Result.quizid" +
+                                                            "WHERE Quiz.name = ?");
+            ps.setString(1, quizName);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return quiz;
     }
 
     public ArrayList<String> getQuizNames () {
