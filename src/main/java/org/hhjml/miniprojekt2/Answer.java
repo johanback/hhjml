@@ -4,11 +4,7 @@ package org.hhjml.miniprojekt2;
 public class Answer {
 
     private long id;
-<<<<<<< HEAD
     private long questionId;
-=======
-    private Question question;
->>>>>>> origin/NewMaster
     private String answer;
     private char resultChar;
 
