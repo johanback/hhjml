@@ -1,5 +1,6 @@
 package org.hhjml.miniprojekt2;
 
+import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,6 +12,8 @@ import java.util.Random;
 @Service
 public class QuizService {
 
+
+
     @Autowired
     QuizRepository repository;
     @Autowired
@@ -20,16 +23,14 @@ public class QuizService {
     @Autowired
     AnswerRepository answerRepository;
 
+
     public Question getQuestion(Quiz quiz, int qnumber) {
         return quiz.getQuestionList().get(qnumber);
     }
 
-    public void initializeQuiz(Quiz activeQuiz){
-        activeQuiz.setQuestionList(questionRepository.findAllByQuiz(activeQuiz));
-        for (Question q: activeQuiz.getQuestionList()) {
-            q.setAnswerList(answerRepository.findAllByQuestion(q));
-        }
-        activeQuiz.setResultList(resultRepository.findByQuiz(activeQuiz));
+    public void initializeQuiz(String quizName){
+        Quiz activeQuiz = repository.findByName(quizName);
+        Hibernate.initialize(activeQuiz);
     }
 
     public Quiz getQuiz (String quizName) {
@@ -37,7 +38,8 @@ public class QuizService {
     }
 
     public int getQuizSize (String quizName) {
-        return repository.findByName(quizName).getQuestionList().size();
+        Quiz activeQuiz = repository.findByName(quizName);
+        return activeQuiz.getQuestionList().size();
 //        return getQuiz(quizName).getQuestionList().size();
     }
 

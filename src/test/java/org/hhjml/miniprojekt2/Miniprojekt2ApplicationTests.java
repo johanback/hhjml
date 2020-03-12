@@ -46,7 +46,7 @@ class Miniprojekt2ApplicationTests {
 	@Test
 	void testNoOfQuestions() {
 		Quiz quiz = repository.findByName("Cheese Quiz");
-		service.initializeQuiz(quiz);
+		service.initializeQuiz("Cheese Quiz");
 		Assertions.assertEquals(2, quiz.getQuestionList().size());
 	}
 

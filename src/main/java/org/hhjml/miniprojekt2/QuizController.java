@@ -31,7 +31,7 @@ public class QuizController {
     String dispayQuiz (HttpSession session, Model model, @PathVariable String quizName) {
         session.setAttribute("qnumber", 0);
         //Store the active quiz in the session
-        service.initializeQuiz((Quiz)session.getAttribute("activeQuiz"));
+        service.initializeQuiz("activeQuiz");
         session.setAttribute("activeQuiz", service.getQuiz(quizName));
         session.setAttribute("quizSize", service.getQuizSize(quizName));
 
