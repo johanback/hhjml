@@ -1,6 +1,5 @@
 package org.hhjml.miniprojekt2;
 
-import org.hhjml.quizzes.Quiz;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

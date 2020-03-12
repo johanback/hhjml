@@ -1,39 +1,42 @@
 package org.hhjml.miniprojekt2;
 
+import java.util.List;
+
 public class Question {
+    private long id;
+    private long quizId;
     private String question;
+    private List<Answer> answerList;
 
-    private String answer1;
-    private String answer2;
-    private String answer3;
-    private String answer4;
-
-    public Question(String question, String answer1, String answer2, String answer3, String answer4) {
-        this.question = question;
-        this.answer1 = answer1;
-        this.answer2 = answer2;
-        this.answer3 = answer3;
-        this.answer4 = answer4;
+    public long getId() {
+        return id;
     }
 
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public long getQuizId() {
+        return quizId;
+    }
+
+    public void setQuizId(long quizId) {
+        this.quizId = quizId;
+    }
 
     public String getQuestion() {
         return question;
     }
 
-    public String getAnswer1() {
-        return answer1;
+    public void setQuestion(String question) {
+        this.question = question;
     }
 
-    public String getAnswer2() {
-        return answer2;
+    public List<Answer> getAnswerList() {
+        return answerList;
     }
 
-    public String getAnswer3() {
-        return answer3;
-    }
-
-    public String getAnswer4() {
-        return answer4;
+    public void setAnswerList(List<Answer> answerList) {
+        this.answerList = answerList;
     }
 }
