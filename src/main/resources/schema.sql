@@ -5,13 +5,13 @@ CREATE TABLE Quiz(
 
 CREATE TABLE Question(
 	ID BIGINT AUTO_INCREMENT PRIMARY KEY,
-	Question nvarchar(100) NULL,
+	Question nvarchar(MAX) NULL,
 	QuizID BIGINT NOT NULL
 );
 
 CREATE TABLE Answer(
 	ID BIGINT AUTO_INCREMENT PRIMARY KEY,
-	Answer nvarchar(50) NULL,
+	Answer nvarchar(MAX) NULL,
 	ResultChar nchar(1) NULL,
 	QuestionID BIGINT NULL
 );

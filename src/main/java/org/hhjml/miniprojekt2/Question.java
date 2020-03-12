@@ -11,7 +11,7 @@ public class Question {
     @ManyToOne
     private Quiz quiz;
     private String question;
-    @OneToMany(mappedBy = "question")
+    @OneToMany(mappedBy = "question", cascade = CascadeType.ALL)
     private List<Answer> answerList;
 
     public long getId() {

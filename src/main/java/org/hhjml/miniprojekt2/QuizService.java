@@ -23,8 +23,8 @@ public class QuizService {
         return quiz.getQuestionList().get(qnumber);
     }
 
-    public void initiateQuiz(Quiz activeQuiz){
-        activeQuiz.setQuestionList(questionRepository.findAllByQuiz(activeQuiz));
+    public void initializeQuiz(Quiz activeQuiz){
+        activeQuiz.setQuestionList(questionRepository.findAllByCustomQuery(activeQuiz));
         for (Question q: activeQuiz.getQuestionList()) {
             q.setAnswerList(answerRepository.findAllByQuestion(q));
         }

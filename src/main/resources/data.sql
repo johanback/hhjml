@@ -3,8 +3,8 @@ INSERT INTO Quiz (Name) VALUES ('Cheese Quiz');
 INSERT INTO Question (quizID, question) VALUES (1, 'Question 1');
 INSERT INTO Question (quizID, question) VALUES (1, 'Question 2');
 
-INSERT INTO Question (quizID,  question) VALUES (1, 'Favourite food?');
-INSERT INTO Question (quizID,  question) VALUES (1,'Favourite color?');
+--INSERT INTO Question (quizID,  question) VALUES (1, 'Favourite food?');
+--INSERT INTO Question (quizID,  question) VALUES (1,'Favourite color?');
 --INSERT INTO Question (quizID,  question) VALUES (1,'How would you define your style?');
 --INSERT INTO Question (quizID,  question) VALUES (1,'Favourite country?');
 --INSERT INTO Question (quizID,  question) VALUES (1,'Pick a sport');
