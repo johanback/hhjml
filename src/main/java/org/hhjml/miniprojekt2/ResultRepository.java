@@ -2,7 +2,11 @@ package org.hhjml.miniprojekt2;
 
 import org.springframework.data.repository.CrudRepository;
 
+import java.util.List;
+
 public interface ResultRepository extends CrudRepository<Result, Long> {
 
-    public Result findByQuizNameAndResultChar(String quizName, char ResultChar);
+    Result findByQuizNameAndResultChar(String name, char resultChar);
+
+    List<Result> findByQuiz(Quiz quiz);
 }

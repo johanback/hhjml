@@ -8,7 +8,7 @@ public class Answer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @ManyToOne
-    private long questionId;
+    private Question question;
     private String answer;
     private char resultChar;
 
@@ -20,12 +20,12 @@ public class Answer {
         this.id = id;
     }
 
-    public long getQuestionId() {
-        return questionId;
+    public Question getQuestion() {
+        return question;
     }
 
-    public void setQuestionId(long questionId) {
-        this.questionId = questionId;
+    public void setQuestion(Question question) {
+        this.question = question;
     }
 
     public String getAnswer() {

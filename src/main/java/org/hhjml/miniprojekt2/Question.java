@@ -9,9 +9,9 @@ public class Question {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @ManyToOne
-    private long quizId;
+    private Quiz quiz;
     private String question;
-    @OneToMany(mappedBy = "questionId")
+    @OneToMany(mappedBy = "question")
     private List<Answer> answerList;
 
     public long getId() {
@@ -22,12 +22,12 @@ public class Question {
         this.id = id;
     }
 
-    public long getQuizId() {
-        return quizId;
+    public Quiz getQuiz() {
+        return quiz;
     }
 
-    public void setQuizId(long quizId) {
-        this.quizId = quizId;
+    public void setQuiz(Quiz quiz) {
+        this.quiz = quiz;
     }
 
     public String getQuestion() {

@@ -6,10 +6,10 @@ import javax.persistence.*;
 public class Result {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    long id;
+    private long id;
 
     @ManyToOne
-    long quizId;
+    private Quiz quiz;
 
     private char resultChar;
     private String result;
@@ -24,12 +24,12 @@ public class Result {
         this.id = id;
     }
 
-    public long getQuizId() {
-        return quizId;
+    public Quiz getQuiz() {
+        return quiz;
     }
 
-    public void setQuizId(long quizId) {
-        this.quizId = quizId;
+    public void setQuiz(Quiz quiz) {
+        this.quiz = quiz;
     }
 
     public char getResultChar() {
