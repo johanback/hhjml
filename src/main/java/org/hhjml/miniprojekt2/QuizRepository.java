@@ -19,6 +19,12 @@ public class QuizRepository {
 
         Quiz quiz = new Quiz();
 
+        /*1. Quiz skapas, får sitt namn
+        2. Metod som skapar en ArrayList av frågor som sen sätts till quizens sån arraylist.
+        3. Metod som sätter resultaten
+        4. Returnerar färdigt quiz.
+         */
+
         try (Connection conn = dataSource.getConnection()) {
             PreparedStatement ps = conn.prepareStatement("SELECT * FROM Quiz" +
                                                             "JOIN Question ON Quiz.id=question.quizid" +
