@@ -1,11 +1,17 @@
 package org.hhjml.miniprojekt2;
 
+import javax.persistence.*;
 import java.util.List;
 
+@Entity
 public class Question {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    @ManyToOne
     private long quizId;
     private String question;
+    @OneToMany(mappedBy = "questionId")
     private List<Answer> answerList;
 
     public long getId() {

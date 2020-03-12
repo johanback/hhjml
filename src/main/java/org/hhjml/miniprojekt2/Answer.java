@@ -1,7 +1,13 @@
 package org.hhjml.miniprojekt2;
 
+import javax.persistence.*;
+
+@Entity
 public class Answer {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    @ManyToOne
     private long questionId;
     private String answer;
     private char resultChar;

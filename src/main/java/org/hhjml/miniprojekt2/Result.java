@@ -1,8 +1,16 @@
 package org.hhjml.miniprojekt2;
 
+import javax.persistence.*;
+
+@Entity
 public class Result {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     long id;
+
+    @ManyToOne
     long quizId;
+
     private char resultChar;
     private String result;
     private String description;
