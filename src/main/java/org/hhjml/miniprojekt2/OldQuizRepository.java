@@ -1,18 +1,13 @@
 package org.hhjml.miniprojekt2;
 
 import org.hhjml.quizzes.*;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import javax.sql.DataSource;
 import java.util.ArrayList;
 import java.util.HashMap;
 
 @Repository
-public class QuizRepository {
-
-    @Autowired
-    DataSource dataSource;
+public class OldQuizRepository {
 
     HashMap<String, Quiz> quizDB = new HashMap<>();
 
@@ -24,7 +19,7 @@ public class QuizRepository {
     RailWayEngineQuiz railWayEngineQuiz = new RailWayEngineQuiz();
     WhoAreYou whoAreYou = new WhoAreYou();
 
-    public QuizRepository() {
+    public OldQuizRepository() {
         quizDB.put(cheeseQuiz.getQuizName(), cheeseQuiz);
         quizDB.put(shoeQuiz.getQuizName(), shoeQuiz);
         quizDB.put(marvelQuiz.getQuizName(), marvelQuiz);
