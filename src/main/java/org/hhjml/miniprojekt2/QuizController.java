@@ -89,7 +89,7 @@ public class QuizController {
         Character resultChar = service.calcMostAnswered((HashMap)session.getAttribute("answerTable"));
         session.removeAttribute("answerTable");
         Quiz activeQuiz = (Quiz)session.getAttribute("activeQuiz");
-        model.addAttribute("result", activeQuiz.getResult(resultChar));
+        model.addAttribute("result", service.getResult(activeQuiz, resultChar));
         return "result";
     }
 
@@ -102,6 +102,6 @@ public class QuizController {
     @PostMapping("/restartquiz")
     public String restartQuiz(HttpSession session) {
         Quiz activeQuiz = (Quiz)session.getAttribute("activeQuiz");
-        return "redirect:/quiz/" + activeQuiz.getName();
+        return "redirect:/quiz/" + activeQuiz.getQuizName();
     }
 }

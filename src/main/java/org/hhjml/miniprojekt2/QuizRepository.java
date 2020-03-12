@@ -7,4 +7,7 @@ public interface QuizRepository extends CrudRepository<Quiz, Long> {
 
     Quiz findByName(String name);
 
+    @Query("SELECT q.name FROM Quiz q")
+    Iterable<String> getQuizNames();
+
 }

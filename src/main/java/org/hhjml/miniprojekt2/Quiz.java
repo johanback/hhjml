@@ -8,7 +8,7 @@ public class Quiz {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private String name;
+    private String quizName;
     @OneToMany(mappedBy = "quizId")
     private List<Result> resultList;
     @OneToMany(mappedBy = "quizId")
@@ -22,12 +22,12 @@ public class Quiz {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getQuizName() {
+        return quizName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setQuizName(String quizName) {
+        this.quizName = quizName;
     }
 
     public List<Result> getResultList() {
