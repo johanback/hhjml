@@ -14,15 +14,15 @@ public class QuizService {
     QuizRepository repository;
 
     public Question getQuestion(Quiz quiz, int qnumber) {
-        return quiz.getQuestionArray().get(qnumber);
+        return quiz.getQuestionList().get(qnumber);
     }
 
     public Quiz getQuiz (String quizName) {
-        return repository.getQuiz(quizName);
+        return repository.findByName(quizName);
     }
 
     public int getQuizSize (String quizName) {
-        return repository.getQuiz(quizName).getQuestionArray().size();
+        return getQuiz(quizName).getQuestionList().size();
     }
 
     public ArrayList<String> getQuizNames () {

@@ -45,7 +45,7 @@ public class QuizController {
         Quiz activeQuiz = (Quiz)session.getAttribute("activeQuiz");
 
         if (session.getAttribute("qnumber") != null) {
-            if ((Integer)session.getAttribute("qnumber") > activeQuiz.getQuestionArray().size() - 1) {
+            if ((Integer)session.getAttribute("qnumber") > activeQuiz.getQuestionList().size() - 1) {
                 return "redirect:/result";
             }
         }
@@ -102,6 +102,6 @@ public class QuizController {
     @PostMapping("/restartquiz")
     public String restartQuiz(HttpSession session) {
         Quiz activeQuiz = (Quiz)session.getAttribute("activeQuiz");
-        return "redirect:/quiz/" + activeQuiz.getQuizName();
+        return "redirect:/quiz/" + activeQuiz.getName();
     }
 }

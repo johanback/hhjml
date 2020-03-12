@@ -8,12 +8,16 @@ import org.junit.jupiter.api.Assertions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.sql.SQLException;
 import java.util.HashMap;
 
 @SpringBootTest
 class Miniprojekt2ApplicationTests {
 	@Autowired
 	QuizService service;
+
+	@Autowired
+	QuizRepository repository;
 
 	@Test
 	void contextLoads() {
@@ -27,6 +31,11 @@ class Miniprojekt2ApplicationTests {
 		Assertions.assertEquals("cheese", cheeseQuiz.getQuizName());
 		Assertions.assertEquals("Marvel", marvelQuiz.getQuizName());
 		Assertions.assertEquals("shoe", shoeQuiz.getQuizName());
+	}
+
+	@Test
+	void testSQLServler() throws SQLException {
+		Assertions.assertTrue(repository.testDB());
 	}
 
 	@Test
