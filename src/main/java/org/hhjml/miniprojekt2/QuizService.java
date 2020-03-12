@@ -12,6 +12,8 @@ public class QuizService {
 
     @Autowired
     QuizRepository repository;
+    @Autowired
+    ResultRepository resultRepository;
 
     public Question getQuestion(Quiz quiz, int qnumber) {
         return quiz.getQuestionList().get(qnumber);
@@ -26,7 +28,7 @@ public class QuizService {
     }
 
     public ArrayList<String> getQuizNames () {
-        return repository.getQuizNames();
+        return (ArrayList<String>) repository.getQuizNames();
     }
 
     public void addScore (HashMap<Character, Integer> answerTable, char answer) {
@@ -63,7 +65,10 @@ public class QuizService {
         int randomNumber = r.nextInt(getQuizNames().size() - 1);
         String randomName = getQuizNames().get(randomNumber);
         return randomName;
+    }
 
+    public Result getResult(Quiz quiz, char resultChar) {
+        return resultRepository.findByQuizNameAndResultChar(quiz.getQuizName(), resultChar);
     }
 
 
