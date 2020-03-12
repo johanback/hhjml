@@ -36,8 +36,7 @@ public class QuizService {
     }
 
     public int getQuizSize (String quizName) {
-
-        return 0;
+        return repository.findByName(quizName).getQuestionList().size();
 //        return getQuiz(quizName).getQuestionList().size();
     }
 

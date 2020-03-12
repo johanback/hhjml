@@ -31,9 +31,9 @@ public class QuizController {
     String dispayQuiz (HttpSession session, Model model, @PathVariable String quizName) {
         session.setAttribute("qnumber", 0);
         //Store the active quiz in the session
+        service.initiateQuiz((Quiz)session.getAttribute("activeQuiz"));
         session.setAttribute("activeQuiz", service.getQuiz(quizName));
         session.setAttribute("quizSize", service.getQuizSize(quizName));
-        service.initiateQuiz((Quiz)session.getAttribute("activeQuiz"));
 
         //Get the first question in the active quiz.
         model.addAttribute("quiz", session.getAttribute("activeQuiz"));
