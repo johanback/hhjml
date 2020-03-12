@@ -1,6 +1,7 @@
 package org.hhjml.miniprojekt2;
 
 import javax.persistence.*;
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Entity
@@ -11,7 +12,8 @@ public class Question {
     @ManyToOne
     private Quiz quiz;
     private String question;
-    @OneToMany(mappedBy = "question", cascade = CascadeType.ALL)
+
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "question", cascade = CascadeType.ALL)
     private List<Answer> answerList;
 
     public long getId() {

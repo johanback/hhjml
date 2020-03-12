@@ -3,6 +3,7 @@ package org.hhjml.miniprojekt2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
@@ -24,7 +25,7 @@ public class QuizService {
     }
 
     public void initializeQuiz(Quiz activeQuiz){
-        activeQuiz.setQuestionList(questionRepository.findAllByCustomQuery(activeQuiz));
+        activeQuiz.setQuestionList(questionRepository.findAllByQuiz(activeQuiz));
         for (Question q: activeQuiz.getQuestionList()) {
             q.setAnswerList(answerRepository.findAllByQuestion(q));
         }

@@ -17,6 +17,7 @@ class Miniprojekt2ApplicationTests {
 	@Autowired
 	QuestionRepository questionRepository;
 
+
 	@Test
 	void contextLoads() {
 	}
@@ -24,6 +25,7 @@ class Miniprojekt2ApplicationTests {
 	@Test
 	void testGetQuiz() {
 		Quiz quiz = repository.findByName("Cheese Quiz");
+
 		List<Question> test = quiz.getQuestionList();
 		for(Question q : test){
 			System.out.println(q);
