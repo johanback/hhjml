@@ -2,7 +2,10 @@ package org.hhjml.miniprojekt2;
 
 import java.util.List;
 
+@Entity
 public class Quiz {
+    @Id
+    @GenratedValue(strategy = generationType.IDENTITY)
     private long id;
     private String name;
     private List<Result> resultList;
