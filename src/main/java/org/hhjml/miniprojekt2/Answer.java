@@ -4,7 +4,7 @@ package org.hhjml.miniprojekt2;
 public class Answer {
 
     private long id;
-    private Question question;
+    private long questionId;
     private String answer;
     private char resultChar;
 
@@ -16,12 +16,12 @@ public class Answer {
         this.id = id;
     }
 
-    public Question getQuestion() {
-        return question;
+    public long getQuestionId() {
+        return questionId;
     }
 
-    public void setQuestion(Question question) {
-        this.question = question;
+    public void setQuestionId(long questionId) {
+        this.questionId = questionId;
     }
 
     public String getAnswer() {
