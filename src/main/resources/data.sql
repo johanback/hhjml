@@ -209,3 +209,5 @@ INSERT INTO Result (QUIZ_ID, RESULT_CHAR, result, description, IMG_URL) VALUES (
 INSERT INTO Result (QUIZ_ID, RESULT_CHAR, result, description, IMG_URL) VALUES (7, 'B', 'Johan', 'Johan is quite tall.', '/johan.jpg');
 INSERT INTO Result (QUIZ_ID, RESULT_CHAR, result, description, IMG_URL) VALUES (7, 'C', 'Henrik', 'Henrik likes plaid shirts and screwdrivers.', '/henrik.jpg');
 INSERT INTO Result (QUIZ_ID, RESULT_CHAR, result, description, IMG_URL) VALUES (7, 'D', 'Hanna', 'Hanna often secretly takes pictures of strangers'' dogs on the subway.', '/Hanna.jpg');
+
+
