@@ -40,12 +40,24 @@ public class QuizRepository {
             }
 
             quiz.setQuestionArray(getQuestions(quiz));
+            quiz.setResultList(getResults(quiz));
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
         return quiz;
+    }
+
+    private List<Result> getResults (Quiz quiz) {
+        List<Result> resultList = new ArrayList<>();
+        try (Connection conn = dataSource.getConnection()) {
+            PreparedStatement ps = conn.prepareStatement("SELECT * FROM Result " +
+                                                        "JOIN Quiz ON Quiz.id=Result.Quiz_id " +
+                                                        "WHERE ")
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     private List<Question> getQuestions (Quiz quiz) {
@@ -84,7 +96,10 @@ public class QuizRepository {
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
-                answerList.add(new Answer(rs.getLong("ID"), rs.getLong("QuestionID"), rs.getString("Answer"), rs.getString("Resultchar").charAt(0)));
+                answerList.add(new Answer(rs.getLong("ID"),
+                        rs.getLong("QuestionID"),
+                        rs.getString("Answer"),
+                        rs.getString("Resultchar").charAt(0)));
             }
         } catch (SQLException e) {
             e.printStackTrace();

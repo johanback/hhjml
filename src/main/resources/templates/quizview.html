@@ -19,25 +19,10 @@
                 <div class="questions">
                     <h3 th:text="${inquiry.question}">CSS Stands for...</h3>
                 </div>
-                <ul class="answerList">
+                <ul class="answerList" th:each="answer : ${inquiry.answerList}">
                     <li>
-                        <input type="radio" name="answer" id="question-1-answers-A" value="A" />
-                        <label for="question-1-answers-A" th:text="${inquiry.answer1}">A) Computer Styled Sections </label>
-                    </li>
-                    
-                    <li>
-                        <input type="radio" name="answer" id="question-1-answers-B" value="B" />
-                        <label for="question-1-answers-B" th:text="${inquiry.answer2}">B) Cascading Style Sheets</label>
-                    </li>
-                    
-                    <li>
-                        <input type="radio" name="answer" id="question-1-answers-C" value="C" />
-                        <label for="question-1-answers-C" th:text="${inquiry.answer3}">C) Crazy Solid Shapes</label>
-                    </li>
-                    
-                    <li>
-                        <input type="radio" name="answer" id="question-1-answers-D" value="D" />
-                        <label for="question-1-answers-D" th:text="${inquiry.answer4}">D) None of the above</label>
+                        <input type="radio" name="answer" th:id="'question-1-answers-' + ${answer.resultChar}" th:value="${answer.resultChar}" />
+                        <label th:for="'question-1-answers-' + ${answer.resultChar}" th:text="${answer.answer}">B) Cascading Style Sheets</label>
                     </li>
                 </ul>
                 <div>
