@@ -13,7 +13,7 @@
 --INSERT INTO Answer (QUESTION_ID, answer, RESULT_CHAR) VALUES (2, 'Answer 3', 'C');
 --INSERT INTO Answer (QUESTION_ID, answer, RESULT_CHAR) VALUES (2, 'Answer 4', 'D');
 --
---INSERT INTO Result (QUIZ_ID, RESULT_CHAR, result, description, IMG_URL) VALUES (1, 'A', 'Result 1', 'Its result #1!', '/audi.jpg');
+--INSERT INTO Result (QUI   Z_ID, RESULT_CHAR, result, description, IMG_URL) VALUES (1, 'A', 'Result 1', 'Its result #1!', '/audi.jpg');
 --INSERT INTO Result (QUIZ_ID, RESULT_CHAR, result, description, IMG_URL) VALUES (1, 'B', 'Result 2', 'Its result #2!', '/audi.jpg');
 --INSERT INTO Result (QUIZ_ID, RESULT_CHAR, result, description, IMG_URL) VALUES (1, 'C', 'Result 3', 'Its result #3!', '/audi.jpg');
 --INSERT INTO Result (QUIZ_ID, RESULT_CHAR, result, description, IMG_URL) VALUES (1, 'D', 'Result 4', 'Its result #4!', '/audi.jpg');
@@ -223,7 +223,7 @@ INSERT INTO Result (QUIZ_ID, RESULT_CHAR, result, description, IMG_URL) VALUES (
 INSERT INTO Result (QUIZ_ID, RESULT_CHAR, result, description, IMG_URL) VALUES (5, 'A', 'Death metal', 'Hard, fast and with indecipherable vocals, you make everyone''s friends shift in their seats when someone puts you on during a party.', '/deathmetal.jpg');
 INSERT INTO Result (QUIZ_ID, RESULT_CHAR, result, description, IMG_URL) VALUES (5, 'B', 'Jazz', 'Technical, inaccessible and elitist, you turn your listeners into the most obnoxious people around, ruining friendships and relationships alike.', '/jazz.jpg');
 INSERT INTO Result (QUIZ_ID, RESULT_CHAR, result, description, IMG_URL) VALUES (5, 'C', 'Pop', 'Simple, easy to listen to, and commercially viable, you are the envy of the other genres, although they would never dare admit it.', '/pop.jpg');
-INSERT INTO Result (QUIZ_ID, RESULT_CHAR, result, description, IMG_URL) VALUES (5, 'D', 'Rap', 'Whether it''s quick and techincal or mumbled and autotuned, you have taken the world by storm. While other genres debate on whether something with no melody can be considered music you are too busy partying and living it up to care.', '/rap.jp');
+INSERT INTO Result (QUIZ_ID, RESULT_CHAR, result, description, IMG_URL) VALUES (5, 'D', 'Rap', 'Whether it''s quick and techincal or mumbled and autotuned, you have taken the world by storm. While other genres debate on whether something with no melody can be considered music you are too busy partying and living it up to care.', '/rap.jpg');
 INSERT INTO Result (QUIZ_ID, RESULT_CHAR, result, description, IMG_URL) VALUES (6, 'A', 'Thomas the tank engine', 'Thomas the Tank Engine is a fictional anthropomorphised steam locomotive in The Railway Series books by the Reverend Wilbert Awdry and his son, Christopher, published from 1945.', '/thomastank.jpeg');
 INSERT INTO Result (QUIZ_ID, RESULT_CHAR, result, description, IMG_URL) VALUES (6, 'B', 'Rc4', 'The SJ Class Rc is the most used electric locomotive in Sweden. Rc is a universal locomotive used both in freight and passenger trains.', '/Rc4.jpg');
 INSERT INTO Result (QUIZ_ID, RESULT_CHAR, result, description, IMG_URL) VALUES (6, 'C', 'TMZ', 'DSB class MZ was a series of 61 diesel-electric locomotives operated by Danske Statsbaner. They were built by NOHAB between 1967 and 1978 under licence from General Motors EMD with subcontractors Thrige-Titan traction motors) and Frichs chassis, bodywork). ', '/tmz.jpg');
