@@ -18,10 +18,15 @@ public class QuizController {
     @Autowired
     QuizService service;
 
+    @GetMapping("/")
+    String redirectToFrontPage(){
+        return "redirect:/quiz";
+    }
+
     @GetMapping("/quiz")
     String displayFrontPage(HttpSession session, Model model){
 
-//        model.addAttribute("randomQuiz",service.getRandomQuiz());
+        model.addAttribute("randomQuiz",service.getRandomQuiz());
         model.addAttribute("quiznames", service.getQuizNames());
         return "frontpage";
     }

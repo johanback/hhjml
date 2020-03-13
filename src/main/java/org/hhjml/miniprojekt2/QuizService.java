@@ -13,8 +13,6 @@ import java.util.Random;
 @Service
 public class QuizService {
 
-
-
     @Autowired
     QuizRepository repository;
     @Autowired
@@ -97,19 +95,11 @@ public class QuizService {
         return mostAnswered;
     }
 
-
-
-//    public String getRandomQuiz(){
-//        Random r = new Random();
-//        int randomNumber = r.nextInt(getQuizNames().size() - 1);
-//        String randomName = getQuizNames().get(randomNumber);
-//        return randomName;
-//    }
-
-/*    public Result getResult(Quiz quiz, char resultChar) {
-        return resultRepository.findByQuizNameAndResultChar(quiz.getName(), resultChar);
-    }*/
-
-
+    public String getRandomQuiz(){
+        Random r = new Random();
+        int randomNumber = r.nextInt(getQuizNames().size() - 1);
+        String randomName = getQuizNames().get(randomNumber);
+        return randomName;
+    }
 
 }
