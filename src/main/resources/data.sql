@@ -40,6 +40,7 @@ INSERT INTO Question (QUIZ_ID,  question) VALUES (7,'Favourite color?');
 INSERT INTO Question (QUIZ_ID,  question) VALUES (7,'Favourite beverage?');
 INSERT INTO Question (QUIZ_ID,  question) VALUES (7,'Shoe size?');
 INSERT INTO Question (QUIZ_ID,  question) VALUES (7,'Pick a sport');
+
 INSERT INTO Answer (QUESTION_ID, answer, RESULT_CHAR) VALUES (1,  'Pasta!',  'A');
 INSERT INTO Answer (QUESTION_ID, answer, RESULT_CHAR) VALUES (1,  'Pizza!',  'B');
 INSERT INTO Answer (QUESTION_ID, answer, RESULT_CHAR) VALUES (1,  'Hamburgers!',  'C');
