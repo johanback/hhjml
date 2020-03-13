@@ -30,16 +30,16 @@ public class QuizRepository {
 
         try (Connection conn = dataSource.getConnection()) {
             PreparedStatement ps = conn.prepareStatement("SELECT * FROM Quiz" +
-                                                            "JOIN Question ON Quiz.id=question.quizid" +
-                                                            "JOIN Answer ON Question.id=Answer.questionid" +
-                                                            "JOIN Result ON Quiz.id=Result.quizid" +
                                                             "WHERE Quiz.name = ?");
             ps.setString(1, quizName);
             ResultSet rs = ps.executeQuery();
 
-            while (rs.next()) {
-
+            if (rs.next()) {
+                quiz.setId(rs.getLong("ID"));
+                quiz.setName(rs.getString("Name"));
             }
+
+            quiz.setQuestionArray(getQuestions(quiz));
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -52,22 +52,59 @@ public class QuizRepository {
         List<Question> qarray = new ArrayList<>();
         //Gör en query som hämtar varje question baserat på quizens id.
         //Gör en metod som tar question och stoppar in alla svar.
+        //Loopa igenom arrayen efter den blivit fylld med frågor och anropa getAnswers för varje.
 
-        getAnswers();
+        try (Connection conn = dataSource.getConnection()) {
+            PreparedStatement ps = conn.prepareStatement("SELECT * FROM Question" +
+                                                            "JOIN Quiz ON Quiz.id=Question.quizid" +
+                                                            "WHERE quizid = ?");
+            ps.setLong(1, quiz.getId());
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                qarray.add(new Question(rs.getLong("ID"),rs.getLong("quizid"), rs.getString("Question"), getAnswers(rs.getLong("ID"))));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
 
         return qarray;
 
     }
 
-    private List<Answer> getAnswers (Question question) {
+    private List<Answer> getAnswers (long questionid) {
         List<Answer> answerList = new ArrayList<>();
         //Gör en question som hämtar varje answer baserat på question id.
+        try (Connection conn = dataSource.getConnection()) {
+            PreparedStatement ps = conn.prepareStatement("SELECT * FROM Answer" +
+                                                        "JOIN Question ON Question.id=Answer.questionid" +
+                                                        "WHERE questionid=?");
+            ps.setLong(1, questionid);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                answerList.add(new Answer(rs.getLong("ID"), rs.getLong("Answerid"), rs.getString("Answer"), rs.getString("Resultchar").charAt(0)));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         return answerList;
     }
 
     public ArrayList<String> getQuizNames () {
         ArrayList<String> quizNames = new ArrayList<>();
-        quizNames.addAll(quizDB.keySet());
+
+        try (Connection conn = dataSource.getConnection()) {
+            PreparedStatement ps = conn.prepareStatement("SELECT Name FROM Quiz");
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                quizNames.add(rs.getString("Name"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
         return quizNames;
     }
 

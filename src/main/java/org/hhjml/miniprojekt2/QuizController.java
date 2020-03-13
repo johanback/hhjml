@@ -104,7 +104,7 @@ public class QuizController {
     @PostMapping("/restartquiz")
     public String restartQuiz(HttpSession session) {
         Quiz activeQuiz = (Quiz)session.getAttribute("activeQuiz");
-        return "redirect:/quiz/" + activeQuiz.getQuizName();
+        return "redirect:/quiz/" + activeQuiz.getName();
     }
 
 }
