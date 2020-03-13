@@ -23,7 +23,7 @@ public class QuizController {
     @GetMapping("/quiz")
     String displayFrontPage(HttpSession session, Model model){
 
-        model.addAttribute("randomQuiz",service.getRandomQuiz());
+//        model.addAttribute("randomQuiz",service.getRandomQuiz());
         model.addAttribute("quiznames", service.getQuizNames());
         return "frontpage";
     }
@@ -34,7 +34,7 @@ public class QuizController {
         session.setAttribute("qnumber", 0);
         //Store the active quiz in the session
         session.setAttribute("activeQuiz", service.getQuiz(quizName));
-        session.setAttribute("quizSize", service.getQuizSize(quizName));
+        session.setAttribute("quizSize", service.getQuizSize((Quiz)session.getAttribute("activeQuiz")));
 
         //Get the first question in the active quiz.
         model.addAttribute("quiz", session.getAttribute("activeQuiz"));

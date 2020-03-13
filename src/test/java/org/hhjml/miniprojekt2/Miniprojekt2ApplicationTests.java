@@ -1,5 +1,6 @@
 package org.hhjml.miniprojekt2;
 
+import org.hhjml.quizzes.Quiz;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,20 +12,19 @@ import java.util.HashMap;
 class Miniprojekt2ApplicationTests {
 	@Autowired
 	QuizService service;
+	@Autowired
+	QuizRepository repository;
 
 	@Test
 	void contextLoads() {
 	}
 
-//	@Test
-//	void givesTheCorrectName(){
-//		CheeseQuiz cheeseQuiz = new CheeseQuiz();
-//		MarvelQuiz marvelQuiz = new MarvelQuiz();
-//		ShoeQuiz shoeQuiz = new ShoeQuiz();
-//		Assertions.assertEquals("cheese", cheeseQuiz.getQuizName());
-//		Assertions.assertEquals("Marvel", marvelQuiz.getQuizName());
-//		Assertions.assertEquals("shoe", shoeQuiz.getQuizName());
-//	}
+	@Test
+	void givesTheCorrectName(){
+		Quiz testquiz = repository.getQuiz("Cheese");
+		Assertions.assertEquals("Cheese", testquiz.getName());
+		Assertions.assertEquals(2, testquiz.getQuestionArray().size());
+	}
 
 	@Test
 	void calcResultWorksAsExpected() {

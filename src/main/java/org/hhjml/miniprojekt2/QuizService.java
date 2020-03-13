@@ -22,8 +22,8 @@ public class QuizService {
         return repository.getQuiz(quizName);
     }
 
-    public int getQuizSize (String quizName) {
-        return repository.getQuiz(quizName).getQuestionArray().size();
+    public int getQuizSize (Quiz quiz) {
+        return quiz.getQuestionArray().size();
     }
 
     public ArrayList<String> getQuizNames () {
@@ -59,13 +59,13 @@ public class QuizService {
         return mostAnswered;
     }
 
-    public String getRandomQuiz(){
-        Random r = new Random();
-        int randomNumber = r.nextInt(getQuizNames().size() - 1);
-        String randomName = getQuizNames().get(randomNumber);
-        return randomName;
-
-    }
+//    public String getRandomQuiz(){
+//        Random r = new Random();
+//        int randomNumber = r.nextInt(getQuizNames().size() - 1);
+//        String randomName = getQuizNames().get(randomNumber);
+//        return randomName;
+//
+//    }
 
 
 
