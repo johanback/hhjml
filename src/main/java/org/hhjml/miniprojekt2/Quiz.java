@@ -1,10 +1,14 @@
 package org.hhjml.miniprojekt2;
 
+import org.springframework.http.converter.json.GsonBuilderUtils;
+
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
 public class Quiz {
+
+    //hej
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;

@@ -2,16 +2,16 @@ body {
     background-color: #049a78;
 }
 
-
 .privew {
     margin-bottom: 20px;
 }
 
+
 .all {
     width:600px;
-    position: fixed; 
+    position: fixed;
     top: 50%; 
-    left: 50%; 
+    left: 50%;
     margin-top: -300px; 
     margin-left: -300px;
 }
