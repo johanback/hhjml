@@ -33,6 +33,17 @@ public class QuizService {
         return question.getAnswers();
     }
 
+    public Object getResult(Quiz quiz, Character resultChar) {
+        List<Result> allResults = quiz.getResults();
+        Result result = null;
+        for(Result r : allResults){
+            if (r.getResultChar() == resultChar){
+                result = r;
+            }
+        }
+        return result;
+    }
+
     public void initializeQuiz(String quizName){
         Quiz activeQuiz = repository.findByName(quizName);
         Hibernate.initialize(activeQuiz);
@@ -85,6 +96,8 @@ public class QuizService {
         }
         return mostAnswered;
     }
+
+
 
 //    public String getRandomQuiz(){
 //        Random r = new Random();

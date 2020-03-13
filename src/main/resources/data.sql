@@ -7,12 +7,12 @@ INSERT INTO Answer (QUESTION_ID, answer, RESULT_CHAR) VALUES (1, 'Answer 1', 'A'
 INSERT INTO Answer (QUESTION_ID, answer, RESULT_CHAR) VALUES (1, 'Answer 2', 'B');
 INSERT INTO Answer (QUESTION_ID, answer, RESULT_CHAR) VALUES (1, 'Answer 3', 'C');
 INSERT INTO Answer (QUESTION_ID, answer, RESULT_CHAR) VALUES (1, 'Answer 4', 'D');
---
---INSERT INTO Answer (QUESTION_ID, answer, RESULT_CHAR) VALUES (2, 'Answer 1', 'A');
---INSERT INTO Answer (QUESTION_ID, answer, RESULT_CHAR) VALUES (2, 'Answer 2', 'B');
---INSERT INTO Answer (QUESTION_ID, answer, RESULT_CHAR) VALUES (2, 'Answer 3', 'C');
---INSERT INTO Answer (QUESTION_ID, answer, RESULT_CHAR) VALUES (2, 'Answer 4', 'D');
---
+
+INSERT INTO Answer (QUESTION_ID, answer, RESULT_CHAR) VALUES (2, 'Answer 1', 'A');
+INSERT INTO Answer (QUESTION_ID, answer, RESULT_CHAR) VALUES (2, 'Answer 2', 'B');
+INSERT INTO Answer (QUESTION_ID, answer, RESULT_CHAR) VALUES (2, 'Answer 3', 'C');
+INSERT INTO Answer (QUESTION_ID, answer, RESULT_CHAR) VALUES (2, 'Answer 4', 'D');
+
 INSERT INTO Result (QUIZ_ID, RESULT_CHAR, result, description, IMG_URL) VALUES (1, 'A', 'Result 1', 'Its result #1!', '/audi.jpg');
 INSERT INTO Result (QUIZ_ID, RESULT_CHAR, result, description, IMG_URL) VALUES (1, 'B', 'Result 2', 'Its result #2!', '/audi.jpg');
 INSERT INTO Result (QUIZ_ID, RESULT_CHAR, result, description, IMG_URL) VALUES (1, 'C', 'Result 3', 'Its result #3!', '/audi.jpg');

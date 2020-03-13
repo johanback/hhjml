@@ -51,8 +51,9 @@ public class QuizController {
                 return "redirect:/result";
             }
         }
-        model.addAttribute("quiz", activeQuiz);
+        model.addAttribute("quiz", session.getAttribute("activeQuiz"));
         model.addAttribute("inquiry", service.getQuestion((Quiz)session.getAttribute("activeQuiz"), qnumber));
+        model.addAttribute("answers", service.getAnswers((Question)model.getAttribute("inquiry")));
         return "quizview";
     }
 
@@ -90,7 +91,7 @@ public class QuizController {
         Character resultChar = service.calcMostAnswered((HashMap)session.getAttribute("answerTable"));
         session.removeAttribute("answerTable");
         Quiz activeQuiz = (Quiz)session.getAttribute("activeQuiz");
-//        model.addAttribute("result", service.getResult(activeQuiz, resultChar));
+        model.addAttribute("result", service.getResult(activeQuiz, resultChar));
         return "result";
     }
 

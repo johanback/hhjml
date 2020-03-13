@@ -17,7 +17,7 @@
             <form action="/registeranswer" method="POST">
 
                 <div class="questions">
-                    <h3 th:text="${inquiry}">CSS Stands for...</h3>
+                    <h3 th:text="${inquiry.questionBody}">CSS Stands for...</h3>
                 </div>
                 <ul class="answerList">
                     <li>
@@ -27,17 +27,17 @@
                     
                     <li>
                         <input type="radio" name="answer" id="question-1-answers-B" value="B" />
-                        <label for="question-1-answers-B" th:text="${inquiry.answer2}">B) Cascading Style Sheets</label>
+                        <label for="question-1-answers-B" th:text="${answers[1].answer}">B) Cascading Style Sheets</label>
                     </li>
                     
                     <li>
                         <input type="radio" name="answer" id="question-1-answers-C" value="C" />
-                        <label for="question-1-answers-C" th:text="${inquiry.answer3}">C) Crazy Solid Shapes</label>
+                        <label for="question-1-answers-C" th:text="${answers[2].answer}">C) Crazy Solid Shapes</label>
                     </li>
                     
                     <li>
                         <input type="radio" name="answer" id="question-1-answers-D" value="D" />
-                        <label for="question-1-answers-D" th:text="${inquiry.answer4}">D) None of the above</label>
+                        <label for="question-1-answers-D" th:text="${answers[3].answer}">D) None of the above</label>
                     </li>
                 </ul>
                 <div>
