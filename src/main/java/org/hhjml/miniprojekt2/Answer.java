@@ -4,9 +4,18 @@ package org.hhjml.miniprojekt2;
 public class Answer {
 
     private long id;
+
     private long questionId;
+
     private String answer;
     private char resultChar;
+
+    public Answer(long id, long questionId, String answer, char resultChar) {
+        this.id = id;
+        this.questionId = questionId;
+        this.answer = answer;
+        this.resultChar = resultChar;
+    }
 
     public long getId() {
         return id;

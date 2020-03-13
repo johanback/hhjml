@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Quiz {
+    private long id;
 
     private String name;
 
@@ -30,6 +31,14 @@ public class Quiz {
             default:
                 return null;
         }
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getName() {

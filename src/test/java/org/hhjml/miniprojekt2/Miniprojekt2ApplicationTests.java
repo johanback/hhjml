@@ -1,8 +1,5 @@
 package org.hhjml.miniprojekt2;
 
-import org.hhjml.quizzes.CheeseQuiz;
-import org.hhjml.quizzes.MarvelQuiz;
-import org.hhjml.quizzes.ShoeQuiz;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,15 +16,15 @@ class Miniprojekt2ApplicationTests {
 	void contextLoads() {
 	}
 
-	@Test
-	void givesTheCorrectName(){
-		CheeseQuiz cheeseQuiz = new CheeseQuiz();
-		MarvelQuiz marvelQuiz = new MarvelQuiz();
-		ShoeQuiz shoeQuiz = new ShoeQuiz();
-		Assertions.assertEquals("cheese", cheeseQuiz.getQuizName());
-		Assertions.assertEquals("Marvel", marvelQuiz.getQuizName());
-		Assertions.assertEquals("shoe", shoeQuiz.getQuizName());
-	}
+//	@Test
+//	void givesTheCorrectName(){
+//		CheeseQuiz cheeseQuiz = new CheeseQuiz();
+//		MarvelQuiz marvelQuiz = new MarvelQuiz();
+//		ShoeQuiz shoeQuiz = new ShoeQuiz();
+//		Assertions.assertEquals("cheese", cheeseQuiz.getQuizName());
+//		Assertions.assertEquals("Marvel", marvelQuiz.getQuizName());
+//		Assertions.assertEquals("shoe", shoeQuiz.getQuizName());
+//	}
 
 	@Test
 	void calcResultWorksAsExpected() {
