@@ -61,10 +61,10 @@ public class QuizRepository {
             while (rs.next()) {
                 resultList.add(new Result(rs.getLong("ID"),
                         rs.getLong("Quiz_ID"),
-                        rs.getString("ResultChar").charAt(0),
+                        rs.getString("Result_Char").charAt(0),
                         rs.getString("Result"),
                         rs.getString("Description"),
-                        rs.getString("imgUrl")));
+                        rs.getString("img_Url")));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -80,13 +80,16 @@ public class QuizRepository {
 
         try (Connection conn = dataSource.getConnection()) {
             PreparedStatement ps = conn.prepareStatement("SELECT * FROM Question " +
-                                                            "JOIN Quiz ON Quiz.id=Question.quizid " +
+                                                            "JOIN Quiz ON Quiz.id=Question.quiz_id " +
                                                             "WHERE quiz.id = ?");
             ps.setLong(1, quiz.getId());
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
-                qarray.add(new Question(rs.getLong("ID"),rs.getLong("quizid"), rs.getString("Question"), getAnswers(rs.getLong("ID"))));
+                qarray.add(new Question(rs.getLong("ID"),
+                        rs.getLong("quiz_id"),
+                        rs.getString("Question"),
+                        getAnswers(rs.getLong("ID"))));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -102,16 +105,16 @@ public class QuizRepository {
         //Gör en question som hämtar varje answer baserat på question id.
         try (Connection conn = dataSource.getConnection()) {
             PreparedStatement ps = conn.prepareStatement("SELECT * FROM Answer " +
-                                                        "JOIN Question ON Question.id=Answer.questionid " +
+                                                        "JOIN Question ON Question.id=Answer.question_id " +
                                                         "WHERE question.id=?");
             ps.setLong(1, questionid);
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
                 answerList.add(new Answer(rs.getLong("ID"),
-                        rs.getLong("QuestionID"),
+                        rs.getLong("Question_ID"),
                         rs.getString("Answer"),
-                        rs.getString("Resultchar").charAt(0)));
+                        rs.getString("Result_char").charAt(0)));
             }
         } catch (SQLException e) {
             e.printStackTrace();
