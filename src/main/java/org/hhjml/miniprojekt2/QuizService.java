@@ -59,13 +59,13 @@ public class QuizService {
         return mostAnswered;
     }
 
-//    public String getRandomQuiz(){
-//        Random r = new Random();
-//        int randomNumber = r.nextInt(getQuizNames().size() - 1);
-//        String randomName = getQuizNames().get(randomNumber);
-//        return randomName;
-//
-//    }
+    public String getRandomQuiz(){
+        Random r = new Random();
+        int randomNumber = r.nextInt(getQuizNames().size() - 1);
+        String randomName = getQuizNames().get(randomNumber);
+        return randomName;
+
+    }
 
 
 
