@@ -30,9 +30,9 @@ public class QuizRepository {
 
         try (Connection conn = dataSource.getConnection()) {
             PreparedStatement ps = conn.prepareStatement("SELECT * FROM Quiz" +
-                                                            "JOIN Question ON Quiz.id=question.quizid" +
-                                                            "JOIN Answer ON Question.id=Answer.questionid" +
-                                                            "JOIN Result ON Quiz.id=Result.quizid" +
+                                                            "JOIN Question ON Quiz.id=question.QUIZ_ID" +
+                                                            "JOIN Answer ON Question.id=Answer.QUESTION_ID" +
+                                                            "JOIN Result ON Quiz.id=Result.QUIZ_ID" +
                                                             "WHERE Quiz.name = ?");
             ps.setString(1, quizName);
             ResultSet rs = ps.executeQuery();
