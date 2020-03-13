@@ -54,10 +54,22 @@ public class QuizRepository {
         try (Connection conn = dataSource.getConnection()) {
             PreparedStatement ps = conn.prepareStatement("SELECT * FROM Result " +
                                                         "JOIN Quiz ON Quiz.id=Result.Quiz_id " +
-                                                        "WHERE ")
+                                                        "WHERE Quiz_id = ?");
+            ps.setLong(1, quiz.getId());
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                resultList.add(new Result(rs.getLong("ID"),
+                        rs.getLong("Quiz_ID"),
+                        rs.getString("ResultChar").charAt(0),
+                        rs.getString("Result"),
+                        rs.getString("Description"),
+                        rs.getString("imgUrl")));
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        return resultList;
     }
 
     private List<Question> getQuestions (Quiz quiz) {
