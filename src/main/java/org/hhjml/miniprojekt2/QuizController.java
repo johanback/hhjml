@@ -38,6 +38,7 @@ public class QuizController {
         //Get the first question in the active quiz.
         model.addAttribute("quiz", session.getAttribute("activeQuiz"));
         model.addAttribute("inquiry", service.getQuestion((Quiz)session.getAttribute("activeQuiz"), 0));
+        model.addAttribute("answers", service.getAnswers((Question)model.getAttribute("inquiry")));
         return "quizview";
     }
 
@@ -46,11 +47,10 @@ public class QuizController {
         Quiz activeQuiz = (Quiz)session.getAttribute("activeQuiz");
 
         if (session.getAttribute("qnumber") != null) {
-            if ((Integer)session.getAttribute("qnumber") > activeQuiz.getQuestionList().size() - 1) {
+            if ((Integer)session.getAttribute("qnumber") > activeQuiz.getQuestions().size() - 1) {
                 return "redirect:/result";
             }
         }
-
         model.addAttribute("quiz", activeQuiz);
         model.addAttribute("inquiry", service.getQuestion((Quiz)session.getAttribute("activeQuiz"), qnumber));
         return "quizview";
@@ -90,7 +90,7 @@ public class QuizController {
         Character resultChar = service.calcMostAnswered((HashMap)session.getAttribute("answerTable"));
         session.removeAttribute("answerTable");
         Quiz activeQuiz = (Quiz)session.getAttribute("activeQuiz");
-        model.addAttribute("result", service.getResult(activeQuiz, resultChar));
+//        model.addAttribute("result", service.getResult(activeQuiz, resultChar));
         return "result";
     }
 

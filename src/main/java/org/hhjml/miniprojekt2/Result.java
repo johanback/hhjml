@@ -8,13 +8,13 @@ public class Result {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @ManyToOne
-    private Quiz quiz;
 
     private char resultChar;
     private String result;
     private String description;
     private String imgUrl;
+    @ManyToOne
+    private Quiz quiz;
 
     public long getId() {
         return id;

@@ -13,16 +13,16 @@
 <body>
     <div class="all">
         <div class="questionsBox">
-            <div class="tinyheader" th:object="${quiz}" th:text="'What kind of ' + *{quizName} + ' are you?'">Test</div>
+            <div class="tinyheader" th:object="${quiz}" th:text="'What kind of ' + *{name} + ' are you?'">Test</div>
             <form action="/registeranswer" method="POST">
 
                 <div class="questions">
-                    <h3 th:text="${inquiry.question}">CSS Stands for...</h3>
+                    <h3 th:text="${inquiry}">CSS Stands for...</h3>
                 </div>
                 <ul class="answerList">
                     <li>
                         <input type="radio" name="answer" id="question-1-answers-A" value="A" />
-                        <label for="question-1-answers-A" th:text="${inquiry.answer1}">A) Computer Styled Sections </label>
+                        <label for="question-1-answers-A" th:text="${answers[0].answer}">A) Computer Styled Sections </label>
                     </li>
                     
                     <li>

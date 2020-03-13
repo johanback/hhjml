@@ -1,28 +1,20 @@
 package org.hhjml.miniprojekt2;
 
 import javax.persistence.*;
-import javax.transaction.Transactional;
 import java.util.List;
 
 @Entity
 public class Question {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
+    @Column (name="QUESTIONBODY")
+    private String questionBody;
     @ManyToOne
     private Quiz quiz;
-    private String question;
+    @OneToMany(mappedBy = "question", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private List<Answer> answers;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "question", cascade = CascadeType.ALL)
-    private List<Answer> answerList;
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
 
     public Quiz getQuiz() {
         return quiz;
@@ -32,19 +24,32 @@ public class Question {
         this.quiz = quiz;
     }
 
-    public String getQuestion() {
-        return question;
+
+
+
+    public Long getId() {
+        return id;
     }
 
-    public void setQuestion(String question) {
-        this.question = question;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public List<Answer> getAnswerList() {
-        return answerList;
+
+
+    public String getQuestionBody() {
+        return questionBody;
     }
 
-    public void setAnswerList(List<Answer> answerList) {
-        this.answerList = answerList;
+    public void setQuestionBody(String questionBody) {
+        this.questionBody = questionBody;
+    }
+
+    public List<Answer> getAnswers() {
+        return answers;
+    }
+
+    public void setAnswers(List<Answer> answers) {
+        this.answers = answers;
     }
 }

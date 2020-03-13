@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Random;
 
 @Service
@@ -25,7 +26,11 @@ public class QuizService {
 
 
     public Question getQuestion(Quiz quiz, int qnumber) {
-        return quiz.getQuestionList().get(qnumber);
+        return quiz.getQuestions().get(qnumber);
+    }
+
+    public List<Answer> getAnswers(Question question){
+        return question.getAnswers();
     }
 
     public void initializeQuiz(String quizName){
@@ -39,8 +44,8 @@ public class QuizService {
 
     public int getQuizSize (String quizName) {
         Quiz activeQuiz = repository.findByName(quizName);
-        return activeQuiz.getQuestionList().size();
-//        return getQuiz(quizName).getQuestionList().size();
+        return activeQuiz.getQuestions().size();
+
     }
 
     public ArrayList<String> getQuizNames () {
@@ -88,9 +93,9 @@ public class QuizService {
 //        return randomName;
 //    }
 
-    public Result getResult(Quiz quiz, char resultChar) {
+/*    public Result getResult(Quiz quiz, char resultChar) {
         return resultRepository.findByQuizNameAndResultChar(quiz.getName(), resultChar);
-    }
+    }*/
 
 
 

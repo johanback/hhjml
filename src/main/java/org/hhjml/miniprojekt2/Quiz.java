@@ -1,5 +1,8 @@
 package org.hhjml.miniprojekt2;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -7,18 +10,37 @@ import java.util.List;
 public class Quiz {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    @Column(name="ID")
+    private Long id;
+    @Column(name="NAME")
     private String name;
-    @OneToMany(mappedBy = "quiz", cascade = CascadeType.ALL)
-    private List<Result> resultList;
-    @OneToMany(mappedBy = "quiz", cascade = CascadeType.ALL)
-    private List<Question> questionList;
+    @OneToMany(mappedBy = "quiz", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private List<Question> questions;
+    @OneToMany(mappedBy = "quiz", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @Fetch(value = FetchMode.SUBSELECT)
+    private List<Result> results;
 
-    public long getId() {
+    public List<Question> getQuestions() {
+        return questions;
+    }
+
+    public void setQuestions(List<Question> questions) {
+        this.questions = questions;
+    }
+
+    public List<Result> getResults() {
+        return results;
+    }
+
+    public void setResults(List<Result> results) {
+        this.results = results;
+    }
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -30,19 +52,4 @@ public class Quiz {
         this.name = name;
     }
 
-    public List<Result> getResultList() {
-        return resultList;
-    }
-
-    public void setResultList(List<Result> resultList) {
-        this.resultList = resultList;
-    }
-
-    public List<Question> getQuestionList() {
-        return questionList;
-    }
-
-    public void setQuestionList(List<Question> questionList) {
-        this.questionList = questionList;
-    }
 }

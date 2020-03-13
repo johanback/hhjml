@@ -6,7 +6,4 @@ import java.util.List;
 
 public interface ResultRepository extends CrudRepository<Result, Long> {
 
-    Result findByQuizNameAndResultChar(String name, char resultChar);
-
-    List<Result> findByQuiz(Quiz quiz);
 }
